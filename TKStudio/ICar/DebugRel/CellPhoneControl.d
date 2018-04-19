@@ -1,0 +1,15 @@
+.\DebugRel\CellPhoneControl.o: ..\..\MyCode\CellPhoneControl.c
+.\DebugRel\CellPhoneControl.o: ..\..\MyCode\CellPhoneControl.h
+.\DebugRel\CellPhoneControl.o: ..\..\MyCode\Common.h
+.\DebugRel\CellPhoneControl.o: ..\..\Core\stm32f10x.h
+.\DebugRel\CellPhoneControl.o: ..\..\Core\core_cm3.h
+.\DebugRel\CellPhoneControl.o: H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h
+.\DebugRel\CellPhoneControl.o: ..\..\Core\system_stm32f10x.h
+.\DebugRel\CellPhoneControl.o: ..\..\Core\stm32f10x_conf.h
+.\DebugRel\CellPhoneControl.o: ..\..\Core\system.h
+.\DebugRel\CellPhoneControl.o: H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdlib.h
+.\DebugRel\CellPhoneControl.o: ..\..\MyCode\usart.h
+.\DebugRel\CellPhoneControl.o: ..\..\MyCode\I2C.h
+.\DebugRel\CellPhoneControl.o: ..\..\MyCode\usart.h
+.\DebugRel\CellPhoneControl.o: ..\..\MyCode\SG90.h
+.\DebugRel\CellPhoneControl.o: ..\..\MyCode\SRF05.h

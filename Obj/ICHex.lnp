@@ -1,0 +1,4 @@
+--cpu Cortex-M3 "..\obj\core_cm3.o" "..\obj\startup_stm32f10x_md.o" "..\obj\system_stm32f10x.o" "..\obj\misc.o" "..\obj\usart.o" "..\obj\l298n.o" "..\obj\common.o" "..\obj\i2c.o" "..\obj\spi.o" "..\obj\screen.o" "..\obj\ds3231.o" "..\obj\ultrasonicsystem.o" "..\obj\main.o" 
+--ro-base 0x08000000 --entry 0x08000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list "..\List\ICHex.map" -o ..\OBJ\ICHex.axf

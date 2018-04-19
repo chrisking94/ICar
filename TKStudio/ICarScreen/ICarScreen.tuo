@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="Windows-1252" ?>
+<TKStudioOptions Version="3.00" Author="YinHandong[Òüº®¶¬]">
+    <Projects OPTPES="98,96,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,96,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,">
+        <Project ProjectGUID="{CD9C9CD3-9FCD-4b4a-A2CD-C3B9D2C63805}" Name="ICarScreen" ACTCFG="DebugRel">
+            <TARGOPT Name="DebugRel" OPTDF="0">
+                <OPTFFF VAL="&lt;.\lcd1.8_textfield.c&gt; {0,1,-1,-1,50,50,819,365,147,2839}" />
+                <OPTFFF VAL="&lt;.\common.h&gt; {0,1,-1,-1,0,0,769,315,0,241}" />
+                <OPTFFF VAL="&lt;.\lcd1.8.c&gt; {0,1,-1,-1,25,25,794,340,186,278}" />
+                <OPTFFF VAL="&lt;.\main.c&gt; {0,1,-1,-1,0,0,744,311,1,66}" />
+                <OPTFFF VAL="&lt;.\spi.c&gt; {0,1,-1,-1,100,100,869,415,0,507}" />
+                <OPTFFF VAL="&lt;.\i2c.h&gt; {0,1,-1,-1,50,50,819,365,70,143}" />
+                <OPTFFF VAL="&lt;.\font.c&gt; {0,1,-1,-1,25,25,794,340,193,7408}" />
+                <OPTFFF VAL="&lt;.\lcd1.8.h&gt; {0,1,-1,-1,75,75,844,390,61,1893}" />
+                <OPTFFF VAL="&lt;.\spi.h&gt; {0,1,-1,-1,100,100,869,415,0,180}" />
+                <OPTFFF VAL="&lt;.\font.h&gt; {0,1,-1,-1,50,50,869,226,0,157}" />
+                <OPTFFF VAL="&lt;.\common.c&gt; {2,3,-1,-1,75,75,844,390,0,98}" />
+            </TARGOPT>
+        </Project>
+    </Projects>
+</TKStudioOptions>

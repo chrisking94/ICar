@@ -1,0 +1,10 @@
+.\DebugRel\NVIC.o: ..\..\MyCode\NVIC.c
+.\DebugRel\NVIC.o: ..\..\MyCode\NVIC.h
+.\DebugRel\NVIC.o: ..\..\MyCode\Common.h
+.\DebugRel\NVIC.o: ..\..\Core\stm32f10x.h
+.\DebugRel\NVIC.o: ..\..\Core\core_cm3.h
+.\DebugRel\NVIC.o: H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h
+.\DebugRel\NVIC.o: ..\..\Core\system_stm32f10x.h
+.\DebugRel\NVIC.o: ..\..\Core\stm32f10x_conf.h
+.\DebugRel\NVIC.o: ..\..\Core\system.h
+.\DebugRel\NVIC.o: H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdlib.h

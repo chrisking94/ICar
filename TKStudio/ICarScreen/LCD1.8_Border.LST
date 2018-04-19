@@ -1,0 +1,101 @@
+C51 COMPILER V9.01   LCD1_8_BORDER                                                         07/06/2017 17:50:20 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE LCD1_8_BORDER
+OBJECT MODULE PLACED IN LCD1.8_Border.OBJ
+COMPILER INVOKED BY: H:\mpro\MCU\Keil\C51\BIN\C51.EXE LCD1.8_Border.c OMF2 BROWSE DEBUG TABS(2)
+
+line level    source
+
+   1          #include "lcd1.8.h"
+   2          
+   3          #ifdef COMPILE_LCD18_
+   4          
+   5          /*边框*/
+   6          
+   7          Border* p_bd;
+*** ERROR C129 IN LINE 7 OF LCD1.8_BORDER.C: missing ';' before '*'
+   8          
+   9          void lcd18_setBorder(Border* bder)
+  10          {
+  11            p_bd=bder;
+  12          }
+  13          
+  14          void lcd18_drawBorder(void)
+  15          {
+  16            u8 i,k=0;
+  17            char inc;
+  18            u8 zero,end;//起点和长度
+  19            
+  20            switch (p_bd->position)
+  21            {
+  22            case BDLeft:
+  23              zero=p_bd->y;
+  24              end=p_bd->y+p_bd->height;
+  25              inc=(char)-1;
+  26              break;
+  27            case BDTop:
+  28              zero=p_bd->x;
+  29              end=p_bd->x+p_bd->width;
+  30              inc=(char)-1;
+  31              break;
+  32            case  BDRight:
+  33              zero=p_bd->y+p_bd->width-1;
+  34              end=p_bd->y+p_bd->height-p_bd->width;
+  35              inc=1;
+  36              break;
+  37            case BDBottom:
+  38              zero=p_bd->x+p_bd->height-1;
+  39              end=p_bd->x+zero+p_bd->width-p_bd->height;
+  40              inc=1;
+  41              break;
+  42            }
+  43            
+  44            end--;
+  45            
+  46            switch(p_bd->position)
+  47            {
+  48              case BDLeft:
+  49              case BDRight:
+  50                for(i=0;i<p_bd->width;i++)
+  51                {
+  52                  pColor=p_bd->color[k];
+  53                  if(k<p_bd->colorCount-1)
+  54                  {
+C51 COMPILER V9.01   LCD1_8_BORDER                                                         07/06/2017 17:50:20 PAGE 2   
+
+  55                    k++;
+  56                  }
+  57                  else
+  58                  {
+  59                    k=0;
+  60                  }
+  61                  lcd18_drawLine(p_bd->x+i,zero,p_bd->x+i,end);
+  62                  zero-=inc;
+  63                  end+=inc;
+  64                }
+  65                break;
+  66              case BDTop:
+  67              case BDBottom:
+  68                for(i=0;i<p_bd->height;i++)
+  69                {
+  70                  pColor=p_bd->color[k];
+  71                  if(k<p_bd->colorCount-1)
+  72                  {
+  73                    k++;
+  74                  }
+  75                  else
+  76                  {
+  77                    k=0;
+  78                  }
+  79                  lcd18_drawLine(zero,p_bd->y+i,end,p_bd->y+i);
+  80                  zero-=inc;
+  81                  end+=inc;
+  82                }
+  83                break;
+  84            }
+  85          }
+  86          
+  87          #endif
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  1 ERROR(S)

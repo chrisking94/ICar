@@ -1,0 +1,9 @@
+".\DebugRel\Common.obj",
+".\DebugRel\Font.obj",
+".\DebugRel\LCD1.8.obj",
+".\DebugRel\LCD1.8_TextField.obj",
+".\DebugRel\SPI.obj",
+".\DebugRel\main.obj" 
+TO ".\DebugRel\ICarScreen" 
+
+PRINT(".\ICarScreen.map") REMOVEUNUSED 

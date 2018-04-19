@@ -1,0 +1,11 @@
+.\DebugRel\TCR5000.o: ..\..\MyCode\TCR5000.c
+.\DebugRel\TCR5000.o: ..\..\MyCode\TCR5000.h
+.\DebugRel\TCR5000.o: ..\..\MyCode\Common.h
+.\DebugRel\TCR5000.o: ..\..\Core\stm32f10x.h
+.\DebugRel\TCR5000.o: ..\..\Core\core_cm3.h
+.\DebugRel\TCR5000.o: H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h
+.\DebugRel\TCR5000.o: ..\..\Core\system_stm32f10x.h
+.\DebugRel\TCR5000.o: ..\..\Core\stm32f10x_conf.h
+.\DebugRel\TCR5000.o: ..\..\Core\system.h
+.\DebugRel\TCR5000.o: H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdlib.h
+.\DebugRel\TCR5000.o: ..\..\MyCode\adc.h

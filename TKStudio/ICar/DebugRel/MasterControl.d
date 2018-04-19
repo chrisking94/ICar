@@ -1,0 +1,16 @@
+.\DebugRel\MasterControl.o: ..\..\MyCode\Systems\MasterControl.c
+.\DebugRel\MasterControl.o: ..\..\MyCode\Systems\MasterControl.h
+.\DebugRel\MasterControl.o: ..\..\MyCode\common.h
+.\DebugRel\MasterControl.o: ..\..\Core\stm32f10x.h
+.\DebugRel\MasterControl.o: ..\..\Core\core_cm3.h
+.\DebugRel\MasterControl.o: H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h
+.\DebugRel\MasterControl.o: ..\..\Core\system_stm32f10x.h
+.\DebugRel\MasterControl.o: ..\..\Core\stm32f10x_conf.h
+.\DebugRel\MasterControl.o: ..\..\Core\system.h
+.\DebugRel\MasterControl.o: H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdlib.h
+.\DebugRel\MasterControl.o: ..\..\MyCode\ir1838.h
+.\DebugRel\MasterControl.o: ..\..\MyCode\usart.h
+.\DebugRel\MasterControl.o: ..\..\MyCode\I2C.h
+.\DebugRel\MasterControl.o: ..\..\MyCode\usart.h
+.\DebugRel\MasterControl.o: ..\..\MyCode\SG90.h
+.\DebugRel\MasterControl.o: ..\..\MyCode\SRF05.h

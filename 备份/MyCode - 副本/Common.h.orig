@@ -1,0 +1,29 @@
+#ifndef COMMON_H
+#define COMMON_H
+
+#include "stm32f10x.h"
+
+#define DEBUG
+
+#define uchar unsigned char
+#define uint u32
+#define int s32
+#define bool u32
+#define true 1
+#define false 0
+
+void common_init(void)
+{
+	//LED
+		GPIO_InitTypeDef GPIO_InitStructure;
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE);	 //使能PF端口时钟
+
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_13;				 // 端口配置
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_OD; 		 //推挽输出
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;		 //IO口速度为50MHz
+	GPIO_Init(GPIOC, &GPIO_InitStructure);					 //根据设定参数初始化GPIOB
+	
+	GPIO_SetBits(GPIOC,GPIO_Pin_13);					//初始化设置为0
+}
+
+#endif

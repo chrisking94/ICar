@@ -1,0 +1,12 @@
+.\DebugRel\Patrol.o: ..\..\MyCode\Patrol.c
+.\DebugRel\Patrol.o: ..\..\MyCode\Patrol.h
+.\DebugRel\Patrol.o: ..\..\MyCode\Common.h
+.\DebugRel\Patrol.o: ..\..\Core\stm32f10x.h
+.\DebugRel\Patrol.o: ..\..\Core\core_cm3.h
+.\DebugRel\Patrol.o: H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h
+.\DebugRel\Patrol.o: ..\..\Core\system_stm32f10x.h
+.\DebugRel\Patrol.o: ..\..\Core\stm32f10x_conf.h
+.\DebugRel\Patrol.o: ..\..\Core\system.h
+.\DebugRel\Patrol.o: H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdlib.h
+.\DebugRel\Patrol.o: ..\..\MyCode\TCR5000.h
+.\DebugRel\Patrol.o: ..\..\MyCode\L298N.h

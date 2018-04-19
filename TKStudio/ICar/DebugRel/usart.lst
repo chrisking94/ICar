@@ -1,0 +1,163 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;****usart驱动，汇编版****
+    2 00000000 40013800 
+                       USART1  EQU              0X40013800
+    3 00000000 40004400 
+                       USART2  EQU              0x40004400
+    4 00000000 00000004 
+                       DROS    EQU              0X04
+    5 00000000 00000000 
+                       SROS    EQU              0X00
+    6 00000000         
+    7 00000000                 AREA             USART,CODE,READONLY
+    8 00000000                 EXPORT           printChar
+    9 00000000                 EXPORT           printStr
+   10 00000000                 EXPORT           printNum
+   11 00000000         
+   12 00000000         ;printChar ，参数1：char，参数2：usart器件代号(1=usart1,
+                       非1=usart2)
+   13 00000000         printChar
+   14 00000000 2901            CMP              R1,#1
+   15 00000002 D101            BNE              U2
+   16 00000004 4903    U1      LDR              R1,=USART1
+   17 00000006 E000            B                WRITECHAR
+   18 00000008 4903    U2      LDR              R1,=USART2
+   19 0000000A         WRITECHAR
+   20 0000000A 680A            LDR              R2,[R1,#SROS]
+   21 0000000C         STANBY
+   22 0000000C F012 0F80       TST              R2,#0X80
+   23 00000010 7108            STRB             R0,[R1,#DROS]
+   24 00000012         
+   25 00000012         ;printStr
+   26 00000012         printStr
+   27 00000012         ;printNum
+   28 00000012         printNum
+   29 00000012 46F7            MOV              PC,LR
+   30 00000014                 END
+              40013800 
+              40004400 
+Command Line: --debug --dwarf2 --xref --cpu=Cortex-M3 --apcs=interwork -o.\Debu
+gRel\usart.o -IH:\mpro\MCU\Keil_MDK\ARM\CMSIS\Include -IH:\mpro\MCU\Keil_MDK\AR
+M\INC\ST\STM32F10x --list=.\DebugRel\usart.lst ..\..\MyCode\usart.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+STANBY 0000000C
+
+Symbol: STANBY
+   Definitions
+      At line 21 in file ..\..\MyCode\usart.s
+   Uses
+      None
+Comment: STANBY unused
+U1 00000004
+
+Symbol: U1
+   Definitions
+      At line 16 in file ..\..\MyCode\usart.s
+   Uses
+      None
+Comment: U1 unused
+U2 00000008
+
+Symbol: U2
+   Definitions
+      At line 18 in file ..\..\MyCode\usart.s
+   Uses
+      At line 15 in file ..\..\MyCode\usart.s
+Comment: U2 used once
+USART 00000000
+
+Symbol: USART
+   Definitions
+      At line 7 in file ..\..\MyCode\usart.s
+   Uses
+      None
+Comment: USART unused
+WRITECHAR 0000000A
+
+Symbol: WRITECHAR
+   Definitions
+      At line 19 in file ..\..\MyCode\usart.s
+   Uses
+      At line 17 in file ..\..\MyCode\usart.s
+Comment: WRITECHAR used once
+printChar 00000000
+
+Symbol: printChar
+   Definitions
+      At line 13 in file ..\..\MyCode\usart.s
+   Uses
+      At line 8 in file ..\..\MyCode\usart.s
+Comment: printChar used once
+printNum 00000012
+
+Symbol: printNum
+   Definitions
+      At line 28 in file ..\..\MyCode\usart.s
+   Uses
+      At line 10 in file ..\..\MyCode\usart.s
+Comment: printNum used once
+printStr 00000012
+
+Symbol: printStr
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Relocatable symbols
+
+   Definitions
+      At line 26 in file ..\..\MyCode\usart.s
+   Uses
+      At line 9 in file ..\..\MyCode\usart.s
+Comment: printStr used once
+8 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+DROS 00000004
+
+Symbol: DROS
+   Definitions
+      At line 4 in file ..\..\MyCode\usart.s
+   Uses
+      At line 23 in file ..\..\MyCode\usart.s
+Comment: DROS used once
+SROS 00000000
+
+Symbol: SROS
+   Definitions
+      At line 5 in file ..\..\MyCode\usart.s
+   Uses
+      At line 20 in file ..\..\MyCode\usart.s
+Comment: SROS used once
+USART1 40013800
+
+Symbol: USART1
+   Definitions
+      At line 2 in file ..\..\MyCode\usart.s
+   Uses
+      At line 16 in file ..\..\MyCode\usart.s
+Comment: USART1 used once
+USART2 40004400
+
+Symbol: USART2
+   Definitions
+      At line 3 in file ..\..\MyCode\usart.s
+   Uses
+      At line 18 in file ..\..\MyCode\usart.s
+Comment: USART2 used once
+4 symbols
+338 symbols in table

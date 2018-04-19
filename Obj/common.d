@@ -1,0 +1,10 @@
+..\OBJ\common.o: ..\MyCode\Common.c
+..\OBJ\common.o: ..\MyCode\Common.h
+..\OBJ\common.o: ..\Core\stm32f10x.h
+..\OBJ\common.o: ..\Core\core_cm3.h
+..\OBJ\common.o: H:\mpro\MCU\Keil_MDK\ARM\ARMCC\bin\..\include\stdint.h
+..\OBJ\common.o: ..\Core\system_stm32f10x.h
+..\OBJ\common.o: ..\Core\stm32f10x_conf.h
+..\OBJ\common.o: ..\Lib\inc\misc.h
+..\OBJ\common.o: ..\Core\stm32f10x.h
+..\OBJ\common.o: ..\Core\system.h

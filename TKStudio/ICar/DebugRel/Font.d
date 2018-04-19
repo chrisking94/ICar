@@ -1,0 +1,10 @@
+.\DebugRel\Font.o: ..\..\MyCode\Font.c
+.\DebugRel\Font.o: ..\..\MyCode\Font.h
+.\DebugRel\Font.o: ..\..\MyCode\Common.h
+.\DebugRel\Font.o: ..\..\Core\stm32f10x.h
+.\DebugRel\Font.o: ..\..\Core\core_cm3.h
+.\DebugRel\Font.o: H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h
+.\DebugRel\Font.o: ..\..\Core\system_stm32f10x.h
+.\DebugRel\Font.o: ..\..\Core\stm32f10x_conf.h
+.\DebugRel\Font.o: ..\..\Core\system.h
+.\DebugRel\Font.o: H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdlib.h

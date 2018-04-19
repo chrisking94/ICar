@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="Windows-1252" ?>
+<TKStudioProject Name="ICarScreen" ProjectGUID="{CD9C9CD3-9FCD-4b4a-A2CD-C3B9D2C63805}" BuildTool="0" ToolVer="keil4" Version="3.00" Author="YinHandong[Òüº®¶¬]">
+    <Configurations>
+        <Configuration Name="DebugRel" CodeMode="2" MemMode="0" RTOS="0" T51FL="0" SIMCLK="45.000000" OCM51="{ 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }" OCR51="{ 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }" CodeBank="0,2,0x0000,0xFFFF," OutputDirectory=".\DebugRel\" OutputName="ICarScreen" GENAPP="1" GENLIB="0" ListingDirectory=".\DebugRel\" OPTLT="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" OPTDBG="1,-1,1,1,1,0,()" DEVICE="STC12C5A60S2" VENDOR="STC-STC12" FAMINY="0" BeforeCmp="0??0??" BeforeBuild="0??0??" AfterBuild="0??0??" asModify="0" cModify="0">
+            <Tool Name="C51Tool" C51FL="4869392" C51VA="0" C51DEF="" C51UDF="" C51MSC="" INCC5="" />
+            <Tool Name="A51Tool" A51FL="68" A51SET="" A51RST="" A51MSC="" INCA5="" />
+            <Tool Name="Lx51Tool" LX51FL="4" LX51COB="" LX51XDB="" LX51PDB="" LX51BIB="" LX51DAB="" LX51IDB="" LX51PRC="" LX51STK="" LX51COS="" LX51XDS="" LX51BIS="" LX51DAS="" LX51IDS="" LX51OVL="" LX51MSC="" LX51DWN="" />
+            <DeviceProperties Item0="CPU=IRAM(0-0xFF) XRAM(0-0x3FF) IROM(0-0xEFFF) CLOCK(45000000) MODP2" Item1='MON=S8051.DLL TP51.DLL(&quot;-p51&quot;)' Item2='SIM=S8051.DLL DP51.DLL(&quot;-p51&quot;)' Item3='SFILE=&quot;LIB\STARTUP.A51&quot; (&quot;Standard 8051 Startup Code&quot;)' Item4='REGFILE=STC12C5A.H(&quot;STC&quot;)' />
+            <DeviceDescription Description="8051-based microcontroller with 1T(1-clock) High-Speed Core,&#x0D;&#x0A;Dual DPTR, 36-44 I/O Lines, 2 Timers/Counters, 2 PCA Timers,&#x0D;&#x0A;Alternative build-in oscillator,&#x0D;&#x0A;Independent Baud Rate Generator, Programmable Clock-Out,&#x0D;&#x0A;60K bytes flash ROM, 1280 bytes data RAM,&#x0D;&#x0A;On-chip EEPROM, 2 UARTs, WDT, ISP/IAP, A/D, CCP/PWM" />
+        </Configuration>
+    </Configurations>
+    <Files>
+        <Filter Name="inc">
+            <File RelativePath="AT24C32.h" />
+            <File RelativePath="Common.h">
+                <Header RelativePath="COMMON.H" />
+                <Header RelativePath="H:\MPRO\MCU\KEIL\C51\INC\REG52.H" />
+            </File>
+            <File RelativePath="DS3231.h" />
+            <File RelativePath="I2C.h" />
+            <File RelativePath="LCD1.8.h">
+                <Header RelativePath="LCD1.8.H" />
+                <Header RelativePath="COMMON.H" />
+                <Header RelativePath="H:\MPRO\MCU\KEIL\C51\INC\REG52.H" />
+                <Header RelativePath="SPI.H" />
+                <Header RelativePath="FONT.H" />
+            </File>
+            <File RelativePath="Font.h">
+                <Header RelativePath="FONT.H" />
+                <Header RelativePath="COMMON.H" />
+                <Header RelativePath="H:\MPRO\MCU\KEIL\C51\INC\REG52.H" />
+            </File>
+            <File RelativePath="SPI.h">
+                <Header RelativePath="SPI.H" />
+                <Header RelativePath="COMMON.H" />
+                <Header RelativePath="H:\MPRO\MCU\KEIL\C51\INC\REG52.H" />
+                <Header RelativePath="H:\MPRO\MCU\KEIL\C51\INC\INTRINS.H" />
+            </File>
+        </Filter>
+        <File RelativePath="main.c">
+            <Header RelativePath="LCD1.8.H" />
+            <Header RelativePath="COMMON.H" />
+            <Header RelativePath="H:\MPRO\MCU\KEIL\C51\INC\REG52.H" />
+            <Header RelativePath="SPI.H" />
+            <Header RelativePath="FONT.H" />
+        </File>
+        <Filter Name="src">
+            <File RelativePath="LCD1.8.c">
+                <Header RelativePath="LCD1.8.H" />
+                <Header RelativePath="COMMON.H" />
+                <Header RelativePath="H:\MPRO\MCU\KEIL\C51\INC\REG52.H" />
+                <Header RelativePath="SPI.H" />
+                <Header RelativePath="FONT.H" />
+            </File>
+            <File RelativePath="LCD1.8_TextField.c">
+                <Header RelativePath="LCD1.8.H" />
+                <Header RelativePath="COMMON.H" />
+                <Header RelativePath="H:\MPRO\MCU\KEIL\C51\INC\REG52.H" />
+                <Header RelativePath="SPI.H" />
+                <Header RelativePath="FONT.H" />
+            </File>
+            <File RelativePath="Font.c">
+                <Header RelativePath="FONT.H" />
+                <Header RelativePath="COMMON.H" />
+                <Header RelativePath="H:\MPRO\MCU\KEIL\C51\INC\REG52.H" />
+            </File>
+            <File RelativePath="Common.c">
+                <Header RelativePath="COMMON.H" />
+                <Header RelativePath="H:\MPRO\MCU\KEIL\C51\INC\REG52.H" />
+            </File>
+            <File RelativePath="SPI.c">
+                <Header RelativePath="SPI.H" />
+                <Header RelativePath="COMMON.H" />
+                <Header RelativePath="H:\MPRO\MCU\KEIL\C51\INC\REG52.H" />
+                <Header RelativePath="H:\MPRO\MCU\KEIL\C51\INC\INTRINS.H" />
+            </File>
+        </Filter>
+    </Files>
+</TKStudioProject>

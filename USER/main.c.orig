@@ -1,0 +1,50 @@
+#include "usart.h"
+#include "common.h"
+#include "L298N.h"
+#include "I2C.h"
+#include "UltrasonicSystem.h"
+
+extern I2CTransmitter I2CT;
+
+int main()
+{
+
+    common_init();
+    usart_init();
+    //L298N_init();
+    I2C_init();
+    UltrasonicSystem_init();
+
+    while (1)
+    {
+			usart_work;
+        //se_turn(162);
+        //delayms(2000);
+        //DS3231_read();
+
+        //while (1)
+        //{
+        //ledp=!ledp;
+        /*
+        delayms(1000);
+
+        I2CT.iaddr = hmc5883;
+        I2CT.idata [0]=0x03;
+        I2CT.iwl = 1;
+        I2CT.imod = I2CRead;
+        I2CT.irl =6;
+
+        I2C_go();
+
+        delayms(1000);
+
+
+        */
+        //USART_SendData(USART2, 'L');
+#ifdef DEBUG
+        //printStr("HelloWord!");
+        //printNum(USART2_IRQn);
+        //printNum(USART2->BRR);
+#endif
+    }
+}

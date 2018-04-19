@@ -1,0 +1,13 @@
+..\OBJ\ds3231.o: ..\MyCode\ds3231.c
+..\OBJ\ds3231.o: ..\MyCode\I2C.h
+..\OBJ\ds3231.o: ..\MyCode\Common.h
+..\OBJ\ds3231.o: ..\Core\stm32f10x.h
+..\OBJ\ds3231.o: ..\Core\core_cm3.h
+..\OBJ\ds3231.o: H:\mpro\MCU\Keil_MDK\ARM\ARMCC\bin\..\include\stdint.h
+..\OBJ\ds3231.o: ..\Core\system_stm32f10x.h
+..\OBJ\ds3231.o: ..\Core\stm32f10x_conf.h
+..\OBJ\ds3231.o: ..\Lib\inc\misc.h
+..\OBJ\ds3231.o: ..\Core\stm32f10x.h
+..\OBJ\ds3231.o: ..\Core\system.h
+..\OBJ\ds3231.o: ..\MyCode\usart.h
+..\OBJ\ds3231.o: ..\MyCode\I2C.h

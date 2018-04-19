@@ -1,0 +1,15 @@
+.\DebugRel\ADC.o: ..\..\MyCode\ADC.c
+.\DebugRel\ADC.o: ..\..\MyCode\ADC.h
+.\DebugRel\ADC.o: ..\..\MyCode\Common.h
+.\DebugRel\ADC.o: ..\..\Core\stm32f10x.h
+.\DebugRel\ADC.o: ..\..\Core\core_cm3.h
+.\DebugRel\ADC.o: H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h
+.\DebugRel\ADC.o: ..\..\Core\system_stm32f10x.h
+.\DebugRel\ADC.o: ..\..\Core\stm32f10x_conf.h
+.\DebugRel\ADC.o: ..\..\Core\system.h
+.\DebugRel\ADC.o: H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdlib.h
+.\DebugRel\ADC.o: ..\..\MyCode\usart.h
+.\DebugRel\ADC.o: ..\..\MyCode\I2C.h
+.\DebugRel\ADC.o: ..\..\MyCode\usart.h
+.\DebugRel\ADC.o: ..\..\MyCode\SG90.h
+.\DebugRel\ADC.o: ..\..\MyCode\SRF05.h

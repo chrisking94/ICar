@@ -1,0 +1,12 @@
+.\DebugRel\Screen.o: ..\..\MyCode\Screen.c
+.\DebugRel\Screen.o: ..\..\MyCode\Screen.h
+.\DebugRel\Screen.o: ..\..\MyCode\Common.h
+.\DebugRel\Screen.o: ..\..\Core\stm32f10x.h
+.\DebugRel\Screen.o: ..\..\Core\core_cm3.h
+.\DebugRel\Screen.o: H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h
+.\DebugRel\Screen.o: ..\..\Core\system_stm32f10x.h
+.\DebugRel\Screen.o: ..\..\Core\stm32f10x_conf.h
+.\DebugRel\Screen.o: ..\..\Lib\inc\misc.h
+.\DebugRel\Screen.o: ..\..\Core\stm32f10x.h
+.\DebugRel\Screen.o: ..\..\Core\system.h
+.\DebugRel\Screen.o: ..\..\MyCode\SPI.h

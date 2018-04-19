@@ -1,0 +1,16 @@
+.\DebugRel\DMA.o: ..\..\MyCode\DMA.c
+.\DebugRel\DMA.o: ..\..\MyCode\DMA.h
+.\DebugRel\DMA.o: ..\..\MyCode\common.h
+.\DebugRel\DMA.o: ..\..\Core\stm32f10x.h
+.\DebugRel\DMA.o: ..\..\Core\core_cm3.h
+.\DebugRel\DMA.o: H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h
+.\DebugRel\DMA.o: ..\..\Core\system_stm32f10x.h
+.\DebugRel\DMA.o: ..\..\Core\stm32f10x_conf.h
+.\DebugRel\DMA.o: ..\..\Core\system.h
+.\DebugRel\DMA.o: H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdlib.h
+.\DebugRel\DMA.o: ..\..\MyCode\adc.h
+.\DebugRel\DMA.o: ..\..\MyCode\usart.h
+.\DebugRel\DMA.o: ..\..\MyCode\I2C.h
+.\DebugRel\DMA.o: ..\..\MyCode\usart.h
+.\DebugRel\DMA.o: ..\..\MyCode\SG90.h
+.\DebugRel\DMA.o: ..\..\MyCode\SRF05.h

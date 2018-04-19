@@ -1,0 +1,9 @@
+"Common.obj",
+"Font.obj",
+"LCD1.8.obj",
+"LCD1.8_TextField.obj",
+"SPI.obj",
+"main.obj" 
+TO "ICarScreen" 
+
+REMOVEUNUSED 

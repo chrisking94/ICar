@@ -1,0 +1,15 @@
+..\OBJ\main.o: main.c
+..\OBJ\main.o: ..\MyCode\usart.h
+..\OBJ\main.o: ..\MyCode\Common.h
+..\OBJ\main.o: ..\Core\stm32f10x.h
+..\OBJ\main.o: ..\Core\core_cm3.h
+..\OBJ\main.o: H:\mpro\MCU\Keil_MDK\ARM\ARMCC\bin\..\include\stdint.h
+..\OBJ\main.o: ..\Core\system_stm32f10x.h
+..\OBJ\main.o: ..\Core\stm32f10x_conf.h
+..\OBJ\main.o: ..\Lib\inc\misc.h
+..\OBJ\main.o: ..\Core\stm32f10x.h
+..\OBJ\main.o: ..\Core\system.h
+..\OBJ\main.o: ..\MyCode\I2C.h
+..\OBJ\main.o: ..\MyCode\usart.h
+..\OBJ\main.o: ..\MyCode\L298N.h
+..\OBJ\main.o: ..\MyCode\UltrasonicSystem.h

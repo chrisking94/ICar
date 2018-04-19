@@ -1,0 +1,92 @@
+#include "L298N.h"
+
+void L298N_init(void)
+{
+    GPIO_InitTypeDef GPIO_InitStructure;
+    TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStructure;
+    TIM_OCInitTypeDef TIM_OCInitStructure;
+    TIM_BDTRInitTypeDef TIM_BDTRInitStructure;
+
+    //①配置时钟
+    RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM4,ENABLE);
+    //②配置GPIO
+    /***电机1引脚配置***/
+    /*电机1.x(TIM1_CH1)=PB8*/
+    GPIO_InitStructure.GPIO_Pin=GPIO_Pin_8;
+    GPIO_InitStructure.GPIO_Speed=GPIO_Speed_50MHz;
+    GPIO_InitStructure.GPIO_Mode=GPIO_Mode_AF_PP;//复用浮空输出
+    GPIO_Init(GPIOB,&GPIO_InitStructure);
+    /*电机1.y=PB5*/
+    GPIO_InitStructure.GPIO_Pin=GPIO_Pin_5;
+    GPIO_Init(GPIOB,&GPIO_InitStructure);
+
+	/***电机2引脚配置***/
+    /*电机2.x(TIM1_CH2)=PB9*/
+    GPIO_InitStructure.GPIO_Pin=GPIO_Pin_9;
+    GPIO_Init(GPIOB,&GPIO_InitStructure);
+		/*电机2.y=PB6*/
+		GPIO_InitStructure.GPIO_Pin=GPIO_Pin_6;
+    GPIO_Init(GPIOB,&GPIO_InitStructure);
+    //③配置定时器
+    TIM_TimeBaseInitStructure.TIM_Period =1000-1;//自动重装载寄存器值
+    TIM_TimeBaseInitStructure.TIM_Prescaler = 72-1;//时钟预分频数
+    TIM_TimeBaseInitStructure.TIM_ClockDivision = TIM_CKD_DIV1;//采样分频
+    TIM_TimeBaseInitStructure.TIM_CounterMode = TIM_CounterMode_Up;//向上计数
+    TIM_TimeBaseInitStructure.TIM_RepetitionCounter = 0;//重复寄存器，用于自动更新pwm占空比
+
+    TIM_TimeBaseInit(TIM1,&TIM_TimeBaseInitStructure);
+    //④pwm输出配置
+    /*基本*/
+    TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM1;//PWM1输出模式
+    TIM_OCInitStructure.TIM_Pulse = 500;//设置占空比时间
+    TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_Low;//设置输出极性
+    TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;//使能该通道输出
+    /*高级定时器*/
+    TIM_OCInitStructure.TIM_OCNPolarity = TIM_OCNPolarity_High;//设置互补端输出极性
+    TIM_OCInitStructure.TIM_OutputNState = TIM_OutputNState_Enable;//使能互补端输出
+    TIM_OCInitStructure.TIM_OCIdleState = TIM_OCIdleState_Reset;//死区后输出状态
+    TIM_OCInitStructure.TIM_OCNIdleState = TIM_OCNIdleState_Reset;//死区后互补端输出状态
+
+    TIM_OC1Init(TIM1,&TIM_OCInitStructure);
+    //⑤死区、刹车功能配置（高级定时器）
+    TIM_BDTRInitStructure.TIM_OSSRState = TIM_OSSRState_Disable;//运行模式下输出选择
+    TIM_BDTRInitStructure.TIM_OSSIState = TIM_OSSIState_Disable;//空闲模式下输出选择
+    TIM_BDTRInitStructure.TIM_LOCKLevel = TIM_LOCKLevel_OFF;//锁定设置
+    TIM_BDTRInitStructure.TIM_DeadTime = 0x90;//死区时间
+    TIM_BDTRInitStructure.TIM_Break = TIM_Break_Disable;//刹车功能使能
+    TIM_BDTRInitStructure.TIM_BreakPolarity = TIM_BreakPolarity_High;//刹车输入极性
+    TIM_BDTRInitStructure.TIM_AutomaticOutput = TIM_AutomaticOutput_Enable;//自动输出使能
+
+    TIM_BDTRConfig(TIM1,&TIM_BDTRInitStructure);
+    //⑥打开使能端
+    TIM_OC1PreloadConfig(TIM1,TIM_OCPreload_Enable);//使能TIMx在CCR1上的预装载寄存器
+    TIM_ARRPreloadConfig(TIM1,ENABLE);//使能TIMx在ARR上的预装载寄存器
+    /*上述2个寄存器：使能时两个寄存器的读写需要等待有更新事件发生时才能被改变（如计数器溢出计时更新时间)
+    								失能时可直接进行读写而没有延迟*/
+    TIM_Cmd(TIM1,ENABLE);
+    TIM_CtrlPWMOutputs(TIM1,ENABLE);
+}
+
+//------------------------------------------------------------------
+//函数名：void L298N_setLS(u32 speed)
+//输入参数：speed(速度)
+//返回参数：null
+//说明：设置左电机速度
+//------------------------------------------------------------------
+void L298N_setLS(u16 speed)
+{
+    TIM_SetCompare1(TIM1,speed);
+}
+
+//------------------------------------------------------------------
+//函数名：L298N_setRS(u16 speed)
+//输入参数：speed(速度)
+//返回参数：null
+//说明：设置右电机速度
+//------------------------------------------------------------------
+void L298N_setRS(u16 speed)
+{
+    TIM_SetCompare1(TIM1,speed);
+}
+
+//可用TIM_SetAutoreload()设置频率

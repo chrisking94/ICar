@@ -1,0 +1,79 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;R0作为函数调用的返回值
+    2 00000000         ;函数参数<=4个，参数传递使用R0~R3，>4个时借助栈
+    3 00000000         ;详见ATPCS（ARM Thumb Procedure Call Standard）
+    4 00000000         
+    5 00000000                 AREA             asmfile,CODE,READONLY
+    6 00000000                 EXPORT           RTC_init
+    7 00000000         RTC_init
+    8 00000000 F810 3B01       LDRB             R3,[R0],#1
+    9 00000004 F811 4B01       LDRB             R4,[R1],#1
+   10 00000008 42A3            CMP              R3,R4
+   11 0000000A D104            BNE              DIF
+   12 0000000C 2B00            CMP              R3,#0
+   13 0000000E D1FE            BNE              RTC_init
+   14 00000010         SAME
+   15 00000010 F04F 0001       MOV              R0,#1
+   16 00000014 E001            B                ENDCMP
+   17 00000016         DIF
+   18 00000016 F04F 0000       MOV              R0,#0
+   19 0000001A         ENDCMP
+   20 0000001A 46F7            MOV              PC,LR
+   21 0000001C                 END
+Command Line: --debug --dwarf2 --xref --cpu=Cortex-M3 --apcs=interwork -o.\Debu
+gRel\RTC.o -IH:\mpro\MCU\Keil_MDK\ARM\CMSIS\Include -IH:\mpro\MCU\Keil_MDK\ARM\
+INC\ST\STM32F10x --list=.\DebugRel\RTC.lst ..\..\MyCode\RTC.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DIF 00000016
+
+Symbol: DIF
+   Definitions
+      At line 17 in file ..\..\MyCode\RTC.s
+   Uses
+      At line 11 in file ..\..\MyCode\RTC.s
+Comment: DIF used once
+ENDCMP 0000001A
+
+Symbol: ENDCMP
+   Definitions
+      At line 19 in file ..\..\MyCode\RTC.s
+   Uses
+      At line 16 in file ..\..\MyCode\RTC.s
+Comment: ENDCMP used once
+RTC_init 00000000
+
+Symbol: RTC_init
+   Definitions
+      At line 7 in file ..\..\MyCode\RTC.s
+   Uses
+      At line 6 in file ..\..\MyCode\RTC.s
+      At line 13 in file ..\..\MyCode\RTC.s
+
+SAME 00000010
+
+Symbol: SAME
+   Definitions
+      At line 14 in file ..\..\MyCode\RTC.s
+   Uses
+      None
+Comment: SAME unused
+asmfile 00000000
+
+Symbol: asmfile
+   Definitions
+      At line 5 in file ..\..\MyCode\RTC.s
+   Uses
+      None
+Comment: asmfile unused
+5 symbols
+329 symbols in table

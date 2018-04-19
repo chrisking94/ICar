@@ -1,0 +1,182 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;R0×÷Îªº¯Êýµ÷ÓÃµÄ·µ»ØÖµ
+    2 00000000         ;º¯Êý²ÎÊý<=4¸ö£¬²ÎÊý´«µÝÊ¹ÓÃR0~R3£¬>4¸öÊ±½èÖúÕ»
+    3 00000000         ;Ïê¼ûATPCS£¨ARM Thumb Procedure Call Standard£©
+    4 00000000 57000040 
+                       RTCCON  EQU              0X57000040
+    5 00000000 57000070 
+                       BCDSEC  EQU              0X57000070
+    6 00000000 57000074 
+                       BCDMIN  EQU              BCDSEC+4
+    7 00000000 57000078 
+                       BCDHOU  EQU              BCDMIN+4
+    8 00000000 5700007C 
+                       BCDDAT  EQU              BCDHOU+4
+    9 00000000 57000084 
+                       BCDMON  EQU              BCDDAT+8
+   10 00000000 57000088 
+                       BCDYEA  EQU              BCDMON+4
+   11 00000000         
+   12 00000000         ;½Ó¿ÚÉùÃ÷
+   13 00000000         
+   14 00000000                 EXPORT           RTC_read
+   15 00000000                 EXPORT           RTC_write
+   16 00000000         
+   17 00000000                 IMPORT           Div_U32     ;usart_asm.s
+   18 00000000                 IMPORT           Bcd2Dec
+   19 00000000                 IMPORT           Dec2Bcd
+   20 00000000         
+   21 00000000                 AREA             RTC_CODE,CODE,READONLY
+   22 00000000         
+   23 00000000         RTC_read                             ;¶ÁÊý¾Ý£¬²ÎÊý1£ºÊý¾
+                                                            ÝµØÖ·
+   24 00000000 B500            STMFD            SP!,{LR}
+   25 00000002 7800            LDRB             R0,[R0]
+   26 00000004 F7FF FFFE       BL               Bcd2Dec
+   27 00000008 BD00            LDMFD            SP!,{PC}
+   28 0000000A         
+   29 0000000A         
+   30 0000000A         RTC_write                            ;Ð´Êý¾Ý£¬²ÎÊý1£ºÒªÐ
+                                                            ´ÈëµÄÊý¾Ý£¬²ÎÊý2£ºÊ
+                                                            ý¾ÝµØÖ·
+   31 0000000A B500            STMFD            SP!,{LR}
+   32 0000000C F7FF FFFE       BL               Dec2Bcd
+   33 00000010 7008            STRB             R0,[R1]
+   34 00000012 BD00            LDMFD            SP!,{PC}
+   35 00000014         
+   36 00000014         
+   37 00000014                 END
+Command Line: --debug --dwarf2 --xref --cpu=Cortex-M3 --apcs=interwork -o.\Debu
+gRel\RTC_asm.o -IH:\mpro\MCU\Keil_MDK\ARM\CMSIS\Include -IH:\mpro\MCU\Keil_MDK\
+ARM\INC\ST\STM32F10x --list=.\DebugRel\RTC_asm.lst ..\..\MyCode\RTC_asm.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RTC_CODE 00000000
+
+Symbol: RTC_CODE
+   Definitions
+      At line 21 in file ..\..\MyCode\RTC_asm.s
+   Uses
+      None
+Comment: RTC_CODE unused
+RTC_read 00000000
+
+Symbol: RTC_read
+   Definitions
+      At line 23 in file ..\..\MyCode\RTC_asm.s
+   Uses
+      At line 14 in file ..\..\MyCode\RTC_asm.s
+Comment: RTC_read used once
+RTC_write 0000000A
+
+Symbol: RTC_write
+   Definitions
+      At line 30 in file ..\..\MyCode\RTC_asm.s
+   Uses
+      At line 15 in file ..\..\MyCode\RTC_asm.s
+Comment: RTC_write used once
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+BCDDAT 5700007C
+
+Symbol: BCDDAT
+   Definitions
+      At line 8 in file ..\..\MyCode\RTC_asm.s
+   Uses
+      At line 9 in file ..\..\MyCode\RTC_asm.s
+Comment: BCDDAT used once
+BCDHOU 57000078
+
+Symbol: BCDHOU
+   Definitions
+      At line 7 in file ..\..\MyCode\RTC_asm.s
+   Uses
+      At line 8 in file ..\..\MyCode\RTC_asm.s
+Comment: BCDHOU used once
+BCDMIN 57000074
+
+Symbol: BCDMIN
+   Definitions
+      At line 6 in file ..\..\MyCode\RTC_asm.s
+   Uses
+      At line 7 in file ..\..\MyCode\RTC_asm.s
+Comment: BCDMIN used once
+BCDMON 57000084
+
+Symbol: BCDMON
+   Definitions
+      At line 9 in file ..\..\MyCode\RTC_asm.s
+   Uses
+      At line 10 in file ..\..\MyCode\RTC_asm.s
+Comment: BCDMON used once
+BCDSEC 57000070
+
+Symbol: BCDSEC
+   Definitions
+      At line 5 in file ..\..\MyCode\RTC_asm.s
+   Uses
+      At line 6 in file ..\..\MyCode\RTC_asm.s
+Comment: BCDSEC used once
+BCDYEA 57000088
+
+Symbol: BCDYEA
+   Definitions
+      At line 10 in file ..\..\MyCode\RTC_asm.s
+   Uses
+      None
+Comment: BCDYEA unused
+RTCCON 57000040
+
+Symbol: RTCCON
+   Definitions
+      At line 4 in file ..\..\MyCode\RTC_asm.s
+   Uses
+      None
+Comment: RTCCON unused
+7 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+Bcd2Dec 00000000
+
+Symbol: Bcd2Dec
+   Definitions
+      At line 18 in file ..\..\MyCode\RTC_asm.s
+   Uses
+      At line 26 in file ..\..\MyCode\RTC_asm.s
+Comment: Bcd2Dec used once
+Dec2Bcd 00000000
+
+Symbol: Dec2Bcd
+   Definitions
+      At line 19 in file ..\..\MyCode\RTC_asm.s
+   Uses
+      At line 32 in file ..\..\MyCode\RTC_asm.s
+Comment: Dec2Bcd used once
+Div_U32 00000000
+
+Symbol: Div_U32
+   Definitions
+      At line 17 in file ..\..\MyCode\RTC_asm.s
+   Uses
+      None
+Comment: Div_U32 unused
+3 symbols
+337 symbols in table

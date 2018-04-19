@@ -1,0 +1,16 @@
+.\DebugRel\SPI.o: ..\..\MyCode\SPI.c
+.\DebugRel\SPI.o: ..\..\MyCode\SPI.h
+.\DebugRel\SPI.o: ..\..\MyCode\Common.h
+.\DebugRel\SPI.o: ..\..\Core\stm32f10x.h
+.\DebugRel\SPI.o: ..\..\Core\core_cm3.h
+.\DebugRel\SPI.o: H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h
+.\DebugRel\SPI.o: ..\..\Core\system_stm32f10x.h
+.\DebugRel\SPI.o: ..\..\Core\stm32f10x_conf.h
+.\DebugRel\SPI.o: ..\..\Core\system.h
+.\DebugRel\SPI.o: H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdlib.h
+.\DebugRel\SPI.o: ..\..\MyCode\usart.h
+.\DebugRel\SPI.o: ..\..\MyCode\I2C.h
+.\DebugRel\SPI.o: ..\..\MyCode\usart.h
+.\DebugRel\SPI.o: ..\..\MyCode\SG90.h
+.\DebugRel\SPI.o: ..\..\MyCode\SRF05.h
+.\DebugRel\SPI.o: ..\..\MyCode\DMA.h

@@ -1,0 +1,17 @@
+.\DebugRel\PowerSystem.o: ..\..\MyCode\Systems\PowerSystem.c
+.\DebugRel\PowerSystem.o: ..\..\MyCode\Systems\PowerSystem.h
+.\DebugRel\PowerSystem.o: ..\..\MyCode\common.h
+.\DebugRel\PowerSystem.o: ..\..\Core\stm32f10x.h
+.\DebugRel\PowerSystem.o: ..\..\Core\core_cm3.h
+.\DebugRel\PowerSystem.o: H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h
+.\DebugRel\PowerSystem.o: ..\..\Core\system_stm32f10x.h
+.\DebugRel\PowerSystem.o: ..\..\Core\stm32f10x_conf.h
+.\DebugRel\PowerSystem.o: ..\..\Core\system.h
+.\DebugRel\PowerSystem.o: H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdlib.h
+.\DebugRel\PowerSystem.o: ..\..\MyCode\FC03.h
+.\DebugRel\PowerSystem.o: ..\..\MyCode\L298N.h
+.\DebugRel\PowerSystem.o: ..\..\MyCode\usart.h
+.\DebugRel\PowerSystem.o: ..\..\MyCode\I2C.h
+.\DebugRel\PowerSystem.o: ..\..\MyCode\usart.h
+.\DebugRel\PowerSystem.o: ..\..\MyCode\SG90.h
+.\DebugRel\PowerSystem.o: ..\..\MyCode\SRF05.h

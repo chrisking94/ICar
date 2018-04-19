@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="Windows-1252" ?>
+<TKStudioProject Name="ICar" ProjectGUID="{8D76E0A5-DA7F-4630-BD23-95ED520C582B}" BuildTool="15" ToolVer="STM32" Version="3.00" Author="YinHandong[Òüº®¶¬]">
+    <Configurations>
+        <Configuration Name="DebugRel" OP="0" XROM="0,0,0,0#0,0,0,0#0,0,0,0" XRAM="0,0,0,0#0,0,0,0#0,0,0,0" OldName="DebugRel" OutBig="0" McLib="0" CLK="8.000000" Cross="0" IROM="1,0x08000000,0x00010000,1#0,0,0,0" IRAM="1,0x20000000,0x00005000,0#0,0,0,0" OldCPU="STM32F103C8" OPTDBG="1,-1,1,0,1,1,()" DEVICE="STM32F103C8" VENDOR="STMicroelectronics" FAMINY="3" SIMCLK="8.000000" cfgModify="0">
+            <MDK_Output OutName="1,H:\Programming\vs2010\GDB\ICar\ICar\Debug\TKHex" OutType="1" OutBatch="0" OutHex="1" OutList="0,.\DebugRel" Debug="0" Browse="0" />
+            <MDK_User BfC="0,()#0,()" BfB="0,()#0,()" AfB="0,()#0,()" Beep="1" SDebug="0" />
+            <MDK_CParam Def="USE_STDPERIPH_DRIVER STM32F10X_MD" uDef="" Inc="..\..\MyCode;..\..\Lib\inc;..\..\Core;..\..\MyCode\Systems" Misc="" Opt="0,0" Code="0,0,0,0,0,0" Language="0,0,0,0" List="0" />
+            <MDK_AsmParam Def="" uDef="" Inc="" Misc="" Code="0,0,0,0,0,0" Language="0" List="1,1" />
+            <MDK_Linker Misc="" UseDef="1" Code="0,0,0,1,()" Sct="" List="1,1,1,1,1,1,1,1,1" first="" />
+            <MDK_Debug DbgType="0" sfSIM="0,1,(),()" hwSIM="1,1,1,()" Drv="(),()" SrvOpt="" />
+            <DeviceProperties Item0='CPU=IRAM(0x20000000-0x20004FFF) IROM(0x8000000-0x800FFFF) CLOCK(8000000) CPUTYPE(&quot;Cortex-M3&quot;)' Item1='FLDLL=UL2CM3(-O14 -S0 -C0 -N00(&quot;ARM Cortex-M3&quot;) -D00(1BA00477) -L00(4) -FO7 -FD20000000 -FC800 -FN1 -FF0STM32F10x_128 -FS08000000 -FL010000)' Item2='MON=SARMCM3.DLL TARMSTM.DLL(&quot;-pSTM32F10x&quot;)' Item3='REGFILE=stm32f10x_lib.h(&quot;ST\STM32F10x&quot;)' Item4='SFILE=&quot;STARTUP\ST\startup_stm32f10x_md.s&quot; (&quot;STM32 Medium Density Line Startup Code&quot;)' Item5='SIM=SARMCM3.DLL  DARMSTM.DLL(&quot;-pSTM32F103C8&quot;)' />
+            <DeviceDescription Description="ARM 32-bit Cortex-M3 Microcontroller, 72MHz, 64kB Flash, 20kB SRAM,&#x0D;&#x0A;PLL, Embedded Internal RC 8MHz and 32kHz, Real-Time Clock,&#x0D;&#x0A;Nested Interrupt Controller, Power Saving Modes, JTAG and SWD,&#x0D;&#x0A;3 Synch. 16-bit Timers with Input Capture, Output Compare and PWM,&#x0D;&#x0A;16-bit 6-ch Advanced Timer, 2 16-bit Watchdog Timers, SysTick Timer,&#x0D;&#x0A;2 SPI, 2 I2C, 3 USART, USB 2.0 Full Speed Interface, CAN 2.0B Active,&#x0D;&#x0A;2 12-bit 10-ch A/D Converter,  Fast I/O Ports" />
+        </Configuration>
+    </Configurations>
+    <Files>
+        <Filter Name="Core">
+            <File RelativePath="..\..\Core\core_cm3.c" FileType="1" Output="core_cm3.o" ro="0" bss="0" rw="0">
+                <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h" />
+            </File>
+            <File RelativePath="..\..\Core\startup_stm32f10x_md.s" FileType="2" Output="startup_stm32f10x_md.o" ro="0" bss="0" rw="0" />
+            <File RelativePath="..\..\Core\system.c" FileType="1" Output="system.o" ro="0" bss="0" rw="0">
+                <Header RelativePath="..\..\Core\system.h" />
+                <Header RelativePath="..\..\Core\stm32f10x.h" />
+                <Header RelativePath="..\..\Core\core_cm3.h" />
+                <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h" />
+                <Header RelativePath="..\..\Core\system_stm32f10x.h" />
+                <Header RelativePath="..\..\Core\stm32f10x_conf.h" />
+            </File>
+            <File RelativePath="..\..\Core\system_stm32f10x.c" FileType="1" Output="system_stm32f10x.o" ro="0" bss="0" rw="0">
+                <Header RelativePath="..\..\Core\stm32f10x.h" />
+                <Header RelativePath="..\..\Core\core_cm3.h" />
+                <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h" />
+                <Header RelativePath="..\..\Core\system_stm32f10x.h" />
+                <Header RelativePath="..\..\Core\stm32f10x_conf.h" />
+            </File>
+        </Filter>
+        <Filter Name="MyLib">
+            <File RelativePath="..\..\MyCode\Common.c" FileType="1" Output="Common.o" ro="0" bss="0" rw="0">
+                <Header RelativePath="..\..\MyCode\Common.h" />
+                <Header RelativePath="..\..\Core\stm32f10x.h" />
+                <Header RelativePath="..\..\Core\core_cm3.h" />
+                <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h" />
+                <Header RelativePath="..\..\Core\system_stm32f10x.h" />
+                <Header RelativePath="..\..\Core\stm32f10x_conf.h" />
+                <Header RelativePath="..\..\Core\system.h" />
+                <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdlib.h" />
+            </File>
+            <Filter Name="Foundation">
+                <File RelativePath="..\..\MyCode\NVIC.c" FileType="1" Output="NVIC.o" ro="0" bss="0" rw="0">
+                    <Header RelativePath="..\..\MyCode\NVIC.h" />
+                    <Header RelativePath="..\..\MyCode\Common.h" />
+                    <Header RelativePath="..\..\Core\stm32f10x.h" />
+                    <Header RelativePath="..\..\Core\core_cm3.h" />
+                    <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h" />
+                    <Header RelativePath="..\..\Core\system_stm32f10x.h" />
+                    <Header RelativePath="..\..\Core\stm32f10x_conf.h" />
+                    <Header RelativePath="..\..\Core\system.h" />
+                    <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdlib.h" />
+                </File>
+                <File RelativePath="..\..\MyCode\ADC.c" FileType="1" Output="ADC.o" ro="0" bss="0" rw="0">
+                    <Header RelativePath="..\..\MyCode\ADC.h" />
+                    <Header RelativePath="..\..\MyCode\Common.h" />
+                    <Header RelativePath="..\..\Core\stm32f10x.h" />
+                    <Header RelativePath="..\..\Core\core_cm3.h" />
+                    <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h" />
+                    <Header RelativePath="..\..\Core\system_stm32f10x.h" />
+                    <Header RelativePath="..\..\Core\stm32f10x_conf.h" />
+                    <Header RelativePath="..\..\Core\system.h" />
+                    <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdlib.h" />
+                    <Header RelativePath="..\..\MyCode\usart.h" />
+                    <Header RelativePath="..\..\MyCode\I2C.h" />
+                    <Header RelativePath="..\..\MyCode\usart.h" />
+                    <Header RelativePath="..\..\MyCode\SG90.h" />
+                    <Header RelativePath="..\..\MyCode\SRF05.h" />
+                </File>
+                <File RelativePath="..\..\MyCode\SPI.c" FileType="1" Output="SPI.o" ro="0" bss="0" rw="0">
+                    <Header RelativePath="..\..\MyCode\SPI.h" />
+                    <Header RelativePath="..\..\MyCode\Common.h" />
+                    <Header RelativePath="..\..\Core\stm32f10x.h" />
+                    <Header RelativePath="..\..\Core\core_cm3.h" />
+                    <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h" />
+                    <Header RelativePath="..\..\Core\system_stm32f10x.h" />
+                    <Header RelativePath="..\..\Core\stm32f10x_conf.h" />
+                    <Header RelativePath="..\..\Core\system.h" />
+                    <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdlib.h" />
+                    <Header RelativePath="..\..\MyCode\usart.h" />
+                    <Header RelativePath="..\..\MyCode\I2C.h" />
+                    <Header RelativePath="..\..\MyCode\usart.h" />
+                    <Header RelativePath="..\..\MyCode\SG90.h" />
+                    <Header RelativePath="..\..\MyCode\SRF05.h" />
+                    <Header RelativePath="..\..\MyCode\DMA.h" />
+                </File>
+                <File RelativePath="..\..\MyCode\I2C.c" FileType="1" Output="I2C.o" ro="0" bss="0" rw="0">
+                    <Header RelativePath="..\..\MyCode\I2C.h" />
+                    <Header RelativePath="..\..\MyCode\Common.h" />
+                    <Header RelativePath="..\..\Core\stm32f10x.h" />
+                    <Header RelativePath="..\..\Core\core_cm3.h" />
+                    <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h" />
+                    <Header RelativePath="..\..\Core\system_stm32f10x.h" />
+                    <Header RelativePath="..\..\Core\stm32f10x_conf.h" />
+                    <Header RelativePath="..\..\Core\system.h" />
+                    <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdlib.h" />
+                    <Header RelativePath="..\..\MyCode\usart.h" />
+                    <Header RelativePath="..\..\MyCode\I2C.h" />
+                    <Header RelativePath="..\..\MyCode\SG90.h" />
+                    <Header RelativePath="..\..\MyCode\SRF05.h" />
+                    <Header RelativePath="..\..\MyCode\usart.h" />
+                    <Header RelativePath="..\..\MyCode\Systems\DisplaySystem.h" />
+                    <Header RelativePath="..\..\MyCode\LCD1.8.h" />
+                    <Header RelativePath="..\..\MyCode\SPI.h" />
+                    <Header RelativePath="..\..\MyCode\DMA.h" />
+                    <Header RelativePath="..\..\MyCode\Font.h" />
+                    <Header RelativePath="..\..\MyCode\Bmp.h" />
+                </File>
+                <File RelativePath="..\..\MyCode\usart.c" FileType="1" Output="usart.o" ro="0" bss="0" rw="0">
+                    <Header RelativePath="..\..\MyCode\usart.h" />
+                    <Header RelativePath="..\..\MyCode\Common.h" />
+                    <Header RelativePath="..\..\Core\stm32f10x.h" />
+                    <Header RelativePath="..\..\Core\core_cm3.h" />
+                    <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h" />
+                    <Header RelativePath="..\..\Core\system_stm32f10x.h" />
+                    <Header RelativePath="..\..\Core\stm32f10x_conf.h" />
+                    <Header RelativePath="..\..\Core\system.h" />
+                    <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdlib.h" />
+                    <Header RelativePath="..\..\MyCode\I2C.h" />
+                    <Header RelativePath="..\..\MyCode\usart.h" />
+                    <Header RelativePath="..\..\MyCode\SG90.h" />
+                    <Header RelativePath="..\..\MyCode\SRF05.h" />
+                    <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdarg.h" />
+                </File>
+                <File RelativePath="..\..\MyCode\DMA.c" FileType="1" Output="DMA.o" ro="0" bss="0" rw="0">
+                    <Header RelativePath="..\..\MyCode\DMA.h" />
+                    <Header RelativePath="..\..\MyCode\common.h" />
+                    <Header RelativePath="..\..\Core\stm32f10x.h" />
+                    <Header RelativePath="..\..\Core\core_cm3.h" />
+                    <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h" />
+                    <Header RelativePath="..\..\Core\system_stm32f10x.h" />
+                    <Header RelativePath="..\..\Core\stm32f10x_conf.h" />
+                    <Header RelativePath="..\..\Core\system.h" />
+                    <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdlib.h" />
+                    <Header RelativePath="..\..\MyCode\adc.h" />
+                    <Header RelativePath="..\..\MyCode\usart.h" />
+                    <Header RelativePath="..\..\MyCode\I2C.h" />
+                    <Header RelativePath="..\..\MyCode\usart.h" />
+                    <Header RelativePath="..\..\MyCode\SG90.h" />
+                    <Header RelativePath="..\..\MyCode\SRF05.h" />
+                </File>
+                <File RelativePath="..\..\MyCode\RTC_asm.s" FileType="2" Output="RTC_asm.o" ro="0" bss="0" rw="0" />
+                <File RelativePath="..\..\MyCode\RTC.c" FileType="1" Output="RTC.o" ro="0" bss="0" rw="0">
+                    <Header RelativePath="..\..\MyCode\rtc.h" />
+                    <Header RelativePath="..\..\MyCode\Common.h" />
+                    <Header RelativePath="..\..\Core\stm32f10x.h" />
+                    <Header RelativePath="..\..\Core\core_cm3.h" />
+                    <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h" />
+                    <Header RelativePath="..\..\Core\system_stm32f10x.h" />
+                    <Header RelativePath="..\..\Core\stm32f10x_conf.h" />
+                    <Header RelativePath="..\..\Core\system.h" />
+                    <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdlib.h" />
+                    <Header RelativePath="..\..\MyCode\ds3231.h" />
+                </File>
+            </Filter>
+            <Filter Name="Hardware">
+                <File RelativePath="..\..\MyCode\L298N.c" FileType="1" Output="L298N.o" ro="0" bss="0" rw="0">
+                    <Header RelativePath="..\..\MyCode\L298N.h" />
+                    <Header RelativePath="..\..\MyCode\Common.h" />
+                    <Header RelativePath="..\..\Core\stm32f10x.h" />
+                    <Header RelativePath="..\..\Core\core_cm3.h" />
+                    <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h" />
+                    <Header RelativePath="..\..\Core\system_stm32f10x.h" />
+                    <Header RelativePath="..\..\Core\stm32f10x_conf.h" />
+                    <Header RelativePath="..\..\Core\system.h" />
+                    <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdlib.h" />
+                    <Header RelativePath="..\..\MyCode\usart.h" />
+                    <Header RelativePath="..\..\MyCode\I2C.h" />
+                    <Header RelativePath="..\..\MyCode\usart.h" />
+                    <Header RelativePath="..\..\MyCode\SG90.h" />
+                    <Header RelativePath="..\..\MyCode\SRF05.h" />
+                </File>
+                <File RelativePath="..\..\MyCode\ds3231.c" FileType="1" Output="ds3231.o" ro="0" bss="0" rw="0">
+                    <Header RelativePath="..\..\MyCode\ds3231.h" />
+                    <Header RelativePath="..\..\MyCode\Common.h" />
+                    <Header RelativePath="..\..\Core\stm32f10x.h" />
+                    <Header RelativePath="..\..\Core\core_cm3.h" />
+                    <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h" />
+                    <Header RelativePath="..\..\Core\system_stm32f10x.h" />
+                    <Header RelativePath="..\..\Core\stm32f10x_conf.h" />
+                    <Header RelativePath="..\..\Core\system.h" />
+                    <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdlib.h" />
+                    <Header RelativePath="..\..\MyCode\I2C.h" />
+                    <Header RelativePath="..\..\MyCode\usart.h" />
+                    <Header RelativePath="..\..\MyCode\I2C.h" />
+                    <Header RelativePath="..\..\MyCode\SG90.h" />
+                    <Header RelativePath="..\..\MyCode\SRF05.h" />
+                    <Header RelativePath="..\..\MyCode\usart.h" />
+                    <Header RelativePath="..\..\MyCode\lcd1.8.h" />
+                    <Header RelativePath="..\..\MyCode\SPI.h" />
+                    <Header RelativePath="..\..\MyCode\DMA.h" />
+                    <Header RelativePath="..\..\MyCode\Font.h" />
+                    <Header RelativePath="..\..\MyCode\Bmp.h" />
+                    <Header RelativePath="..\..\MyCode\Systems\DisplaySystem.h" />
+                    <Header RelativePath="..\..\MyCode\LCD1.8.h" />
+                    <Header RelativePath="..\..\MyCode\rtc.h" />
+                </File>
+                <File RelativePath="..\..\MyCode\IR1838.c" FileType="1" Output="IR1838.o" ro="0" bss="0" rw="0">
+                    <Header RelativePath="..\..\MyCode\ir1838.h" />
+                    <Header RelativePath="..\..\MyCode\Common.h" />
+                    <Header RelativePath="..\..\Core\stm32f10x.h" />
+                    <Header RelativePath="..\..\Core\core_cm3.h" />
+                    <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h" />
+                    <Header RelativePath="..\..\Core\system_stm32f10x.h" />
+                    <Header RelativePath="..\..\Core\stm32f10x_conf.h" />
+                    <Header RelativePath="..\..\Core\system.h" />
+                    <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdlib.h" />
+                    <Header RelativePath="..\..\MyCode\usart.h" />
+                    <Header RelativePath="..\..\MyCode\I2C.h" />
+                    <Header RelativePath="..\..\MyCode\usart.h" />
+                    <Header RelativePath="..\..\MyCode\SG90.h" />
+                    <Header RelativePath="..\..\MyCode\SRF05.h" />
+                    <Header RelativePath="..\..\MyCode\Systems\DisplaySystem.h" />
+                    <Header RelativePath="..\..\MyCode\LCD1.8.h" />
+                    <Header RelativePath="..\..\MyCode\SPI.h" />
+                    <Header RelativePath="..\..\MyCode\DMA.h" />
+                    <Header RelativePath="..\..\MyCode\Font.h" />
+                    <Header RelativePath="..\..\MyCode\Bmp.h" />
+                </File>
+                <File RelativePath="..\..\MyCode\SG90.c" FileType="1" Output="SG90.o" ro="0" bss="0" rw="0">
+                    <Header RelativePath="..\..\MyCode\SG90.h" />
+                    <Header RelativePath="..\..\MyCode\common.h" />
+                    <Header RelativePath="..\..\Core\stm32f10x.h" />
+                    <Header RelativePath="..\..\Core\core_cm3.h" />
+                    <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h" />
+                    <Header RelativePath="..\..\Core\system_stm32f10x.h" />
+                    <Header RelativePath="..\..\Core\stm32f10x_conf.h" />
+                    <Header RelativePath="..\..\Core\system.h" />
+                    <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdlib.h" />
+                    <Header RelativePath="..\..\MyCode\Systems\DisplaySystem.h" />
+                    <Header RelativePath="..\..\MyCode\LCD1.8.h" />
+                    <Header RelativePath="..\..\MyCode\SPI.h" />
+                    <Header RelativePath="..\..\MyCode\usart.h" />
+                    <Header RelativePath="..\..\MyCode\I2C.h" />
+                    <Header RelativePath="..\..\MyCode\usart.h" />
+                    <Header RelativePath="..\..\MyCode\SRF05.h" />
+                    <Header RelativePath="..\..\MyCode\DMA.h" />
+                    <Header RelativePath="..\..\MyCode\Font.h" />
+                    <Header RelativePath="..\..\MyCode\Bmp.h" />
+                </File>
+                <File RelativePath="..\..\MyCode\SRF05.c" FileType="1" Output="SRF05.o" ro="0" bss="0" rw="0">
+                    <Header RelativePath="..\..\MyCode\SRF05.h" />
+                    <Header RelativePath="..\..\MyCode\SG90.h" />
+                    <Header RelativePath="..\..\MyCode\common.h" />
+                    <Header RelativePath="..\..\Core\stm32f10x.h" />
+                    <Header RelativePath="..\..\Core\core_cm3.h" />
+                    <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h" />
+                    <Header RelativePath="..\..\Core\system_stm32f10x.h" />
+                    <Header RelativePath="..\..\Core\stm32f10x_conf.h" />
+                    <Header RelativePath="..\..\Core\system.h" />
+                    <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdlib.h" />
+                    <Header RelativePath="..\..\MyCode\usart.h" />
+                    <Header RelativePath="..\..\MyCode\I2C.h" />
+                    <Header RelativePath="..\..\MyCode\usart.h" />
+                    <Header RelativePath="..\..\MyCode\SRF05.h" />
+                </File>
+                <File RelativePath="..\..\MyCode\TCR5000.c" FileType="1" Output="TCR5000.o" ro="0" bss="0" rw="0">
+                    <Header RelativePath="..\..\MyCode\TCR5000.h" />
+                    <Header RelativePath="..\..\MyCode\Common.h" />
+                    <Header RelativePath="..\..\Core\stm32f10x.h" />
+                    <Header RelativePath="..\..\Core\core_cm3.h" />
+                    <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h" />
+                    <Header RelativePath="..\..\Core\system_stm32f10x.h" />
+                    <Header RelativePath="..\..\Core\stm32f10x_conf.h" />
+                    <Header RelativePath="..\..\Core\system.h" />
+                    <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdlib.h" />
+                    <Header RelativePath="..\..\MyCode\adc.h" />
+                </File>
+                <Filter Name="LCD1.8">
+                    <File RelativePath="..\..\MyCode\LCD1.8.c" FileType="1" Output="LCD1.8.o" ro="0" bss="0" rw="0">
+                        <Header RelativePath="..\..\MyCode\LCD1.8.h" />
+                        <Header RelativePath="..\..\MyCode\Common.h" />
+                        <Header RelativePath="..\..\Core\stm32f10x.h" />
+                        <Header RelativePath="..\..\Core\core_cm3.h" />
+                        <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h" />
+                        <Header RelativePath="..\..\Core\system_stm32f10x.h" />
+                        <Header RelativePath="..\..\Core\stm32f10x_conf.h" />
+                        <Header RelativePath="..\..\Core\system.h" />
+                        <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdlib.h" />
+                        <Header RelativePath="..\..\MyCode\SPI.h" />
+                        <Header RelativePath="..\..\MyCode\usart.h" />
+                        <Header RelativePath="..\..\MyCode\I2C.h" />
+                        <Header RelativePath="..\..\MyCode\usart.h" />
+                        <Header RelativePath="..\..\MyCode\SG90.h" />
+                        <Header RelativePath="..\..\MyCode\SRF05.h" />
+                        <Header RelativePath="..\..\MyCode\DMA.h" />
+                        <Header RelativePath="..\..\MyCode\Font.h" />
+                        <Header RelativePath="..\..\MyCode\Bmp.h" />
+                    </File>
+                    <File RelativePath="..\..\MyCode\LCD1.8_TextField.c" FileType="1" Output="LCD1.8_TextField.o" ro="0" bss="0" rw="0">
+                        <Header RelativePath="..\..\MyCode\lcd1.8.h" />
+                        <Header RelativePath="..\..\MyCode\Common.h" />
+                        <Header RelativePath="..\..\Core\stm32f10x.h" />
+                        <Header RelativePath="..\..\Core\core_cm3.h" />
+                        <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h" />
+                        <Header RelativePath="..\..\Core\system_stm32f10x.h" />
+                        <Header RelativePath="..\..\Core\stm32f10x_conf.h" />
+                        <Header RelativePath="..\..\Core\system.h" />
+                        <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdlib.h" />
+                        <Header RelativePath="..\..\MyCode\SPI.h" />
+                        <Header RelativePath="..\..\MyCode\usart.h" />
+                        <Header RelativePath="..\..\MyCode\I2C.h" />
+                        <Header RelativePath="..\..\MyCode\usart.h" />
+                        <Header RelativePath="..\..\MyCode\SG90.h" />
+                        <Header RelativePath="..\..\MyCode\SRF05.h" />
+                        <Header RelativePath="..\..\MyCode\DMA.h" />
+                        <Header RelativePath="..\..\MyCode\Font.h" />
+                        <Header RelativePath="..\..\MyCode\Bmp.h" />
+                    </File>
+                </Filter>
+                <File RelativePath="..\..\MyCode\HMC5883.c" FileType="1" Output="HMC5883.o" ro="0" bss="0" rw="0">
+                    <Header RelativePath="..\..\MyCode\hmc5883.h" />
+                    <Header RelativePath="..\..\MyCode\Common.h" />
+                    <Header RelativePath="..\..\Core\stm32f10x.h" />
+                    <Header RelativePath="..\..\Core\core_cm3.h" />
+                    <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h" />
+                    <Header RelativePath="..\..\Core\system_stm32f10x.h" />
+                    <Header RelativePath="..\..\Core\stm32f10x_conf.h" />
+                    <Header RelativePath="..\..\Core\system.h" />
+                    <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdlib.h" />
+                    <Header RelativePath="..\..\MyCode\I2C.h" />
+                    <Header RelativePath="..\..\MyCode\usart.h" />
+                    <Header RelativePath="..\..\MyCode\I2C.h" />
+                    <Header RelativePath="..\..\MyCode\SG90.h" />
+                    <Header RelativePath="..\..\MyCode\SRF05.h" />
+                    <Header RelativePath="..\..\MyCode\usart.h" />
+                    <Header RelativePath="..\..\MyCode\Systems\DisplaySystem.h" />
+                    <Header RelativePath="..\..\MyCode\LCD1.8.h" />
+                    <Header RelativePath="..\..\MyCode\SPI.h" />
+                    <Header RelativePath="..\..\MyCode\DMA.h" />
+                    <Header RelativePath="..\..\MyCode\Font.h" />
+                    <Header RelativePath="..\..\MyCode\Bmp.h" />
+                </File>
+                <File RelativePath="..\..\MyCode\AT24C32.c" FileType="1" Output="AT24C32.o" ro="0" bss="0" rw="0">
+                    <Header RelativePath="..\..\MyCode\at24c32.h" />
+                    <Header RelativePath="..\..\MyCode\common.h" />
+                    <Header RelativePath="..\..\Core\stm32f10x.h" />
+                    <Header RelativePath="..\..\Core\core_cm3.h" />
+                    <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h" />
+                    <Header RelativePath="..\..\Core\system_stm32f10x.h" />
+                    <Header RelativePath="..\..\Core\stm32f10x_conf.h" />
+                    <Header RelativePath="..\..\Core\system.h" />
+                    <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdlib.h" />
+                    <Header RelativePath="..\..\MyCode\I2C.h" />
+                    <Header RelativePath="..\..\MyCode\usart.h" />
+                    <Header RelativePath="..\..\MyCode\I2C.h" />
+                    <Header RelativePath="..\..\MyCode\SG90.h" />
+                    <Header RelativePath="..\..\MyCode\SRF05.h" />
+                    <Header RelativePath="..\..\MyCode\usart.h" />
+                    <Header RelativePath="..\..\MyCode\Systems\DisplaySystem.h" />
+                    <Header RelativePath="..\..\MyCode\LCD1.8.h" />
+                    <Header RelativePath="..\..\MyCode\SPI.h" />
+                    <Header RelativePath="..\..\MyCode\DMA.h" />
+                    <Header RelativePath="..\..\MyCode\Font.h" />
+                    <Header RelativePath="..\..\MyCode\Bmp.h" />
+                </File>
+                <File RelativePath="..\..\MyCode\MPU6050.c" FileType="1" Output="MPU6050.o" ro="0" bss="0" rw="0">
+                    <Header RelativePath="..\..\MyCode\MPU6050.h" />
+                    <Header RelativePath="..\..\MyCode\Common.h" />
+                    <Header RelativePath="..\..\Core\stm32f10x.h" />
+                    <Header RelativePath="..\..\Core\core_cm3.h" />
+                    <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h" />
+                    <Header RelativePath="..\..\Core\system_stm32f10x.h" />
+                    <Header RelativePath="..\..\Core\stm32f10x_conf.h" />
+                    <Header RelativePath="..\..\Core\system.h" />
+                    <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdlib.h" />
+                    <Header RelativePath="..\..\MyCode\I2C.h" />
+                    <Header RelativePath="..\..\MyCode\usart.h" />
+                    <Header RelativePath="..\..\MyCode\I2C.h" />
+                    <Header RelativePath="..\..\MyCode\SG90.h" />
+                    <Header RelativePath="..\..\MyCode\SRF05.h" />
+                    <Header RelativePath="..\..\MyCode\usart.h" />
+                    <Header RelativePath="..\..\MyCode\Systems\DisplaySystem.h" />
+                    <Header RelativePath="..\..\MyCode\LCD1.8.h" />
+                    <Header RelativePath="..\..\MyCode\SPI.h" />
+                    <Header RelativePath="..\..\MyCode\DMA.h" />
+                    <Header RelativePath="..\..\MyCode\Font.h" />
+                    <Header RelativePath="..\..\MyCode\Bmp.h" />
+                </File>
+                <File RelativePath="..\..\MyCode\FC03.c" FileType="1" Output="FC03.o" ro="0" bss="0" rw="0">
+                    <Header RelativePath="..\..\MyCode\FC03.h" />
+                    <Header RelativePath="..\..\MyCode\Common.h" />
+                    <Header RelativePath="..\..\Core\stm32f10x.h" />
+                    <Header RelativePath="..\..\Core\core_cm3.h" />
+                    <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h" />
+                    <Header RelativePath="..\..\Core\system_stm32f10x.h" />
+                    <Header RelativePath="..\..\Core\stm32f10x_conf.h" />
+                    <Header RelativePath="..\..\Core\system.h" />
+                    <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdlib.h" />
+                    <Header RelativePath="..\..\MyCode\Systems\DisplaySystem.h" />
+                    <Header RelativePath="..\..\MyCode\LCD1.8.h" />
+                    <Header RelativePath="..\..\MyCode\SPI.h" />
+                    <Header RelativePath="..\..\MyCode\usart.h" />
+                    <Header RelativePath="..\..\MyCode\I2C.h" />
+                    <Header RelativePath="..\..\MyCode\usart.h" />
+                    <Header RelativePath="..\..\MyCode\SG90.h" />
+                    <Header RelativePath="..\..\MyCode\SRF05.h" />
+                    <Header RelativePath="..\..\MyCode\DMA.h" />
+                    <Header RelativePath="..\..\MyCode\Font.h" />
+                    <Header RelativePath="..\..\MyCode\Bmp.h" />
+                </File>
+            </Filter>
+            <File RelativePath="..\..\MyCode\Systems\PowerSystem.c" FileType="1" Output="PowerSystem.o" ro="0" bss="0" rw="0">
+                <Header RelativePath="..\..\MyCode\Systems\PowerSystem.h" />
+                <Header RelativePath="..\..\MyCode\common.h" />
+                <Header RelativePath="..\..\Core\stm32f10x.h" />
+                <Header RelativePath="..\..\Core\core_cm3.h" />
+                <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h" />
+                <Header RelativePath="..\..\Core\system_stm32f10x.h" />
+                <Header RelativePath="..\..\Core\stm32f10x_conf.h" />
+                <Header RelativePath="..\..\Core\system.h" />
+                <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdlib.h" />
+                <Header RelativePath="..\..\MyCode\FC03.h" />
+                <Header RelativePath="..\..\MyCode\L298N.h" />
+                <Header RelativePath="..\..\MyCode\usart.h" />
+                <Header RelativePath="..\..\MyCode\I2C.h" />
+                <Header RelativePath="..\..\MyCode\usart.h" />
+                <Header RelativePath="..\..\MyCode\SG90.h" />
+                <Header RelativePath="..\..\MyCode\SRF05.h" />
+            </File>
+            <File RelativePath="..\..\MyCode\Systems\MasterControl.c" FileType="1" Output="MasterControl.o" ro="0" bss="0" rw="0">
+                <Header RelativePath="..\..\MyCode\Systems\MasterControl.h" />
+                <Header RelativePath="..\..\MyCode\common.h" />
+                <Header RelativePath="..\..\Core\stm32f10x.h" />
+                <Header RelativePath="..\..\Core\core_cm3.h" />
+                <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h" />
+                <Header RelativePath="..\..\Core\system_stm32f10x.h" />
+                <Header RelativePath="..\..\Core\stm32f10x_conf.h" />
+                <Header RelativePath="..\..\Core\system.h" />
+                <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdlib.h" />
+                <Header RelativePath="..\..\MyCode\ir1838.h" />
+                <Header RelativePath="..\..\MyCode\usart.h" />
+                <Header RelativePath="..\..\MyCode\I2C.h" />
+                <Header RelativePath="..\..\MyCode\usart.h" />
+                <Header RelativePath="..\..\MyCode\SG90.h" />
+                <Header RelativePath="..\..\MyCode\SRF05.h" />
+            </File>
+            <File RelativePath="..\..\MyCode\Systems\ObstacleAvoidingSystem.c" FileType="1" Output="ObstacleAvoidingSystem.o" ro="0" bss="0" rw="0">
+                <Header RelativePath="..\..\MyCode\Systems\ObstacleAvoidingSystem.h" />
+                <Header RelativePath="..\..\MyCode\Common.h" />
+                <Header RelativePath="..\..\Core\stm32f10x.h" />
+                <Header RelativePath="..\..\Core\core_cm3.h" />
+                <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h" />
+                <Header RelativePath="..\..\Core\system_stm32f10x.h" />
+                <Header RelativePath="..\..\Core\stm32f10x_conf.h" />
+                <Header RelativePath="..\..\Core\system.h" />
+                <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdlib.h" />
+                <Header RelativePath="..\..\MyCode\SG90.h" />
+                <Header RelativePath="..\..\MyCode\L298N.h" />
+                <Header RelativePath="..\..\MyCode\SRF05.h" />
+                <Header RelativePath="..\..\MyCode\usart.h" />
+                <Header RelativePath="..\..\MyCode\I2C.h" />
+                <Header RelativePath="..\..\MyCode\usart.h" />
+                <Header RelativePath="..\..\MyCode\SRF05.h" />
+                <Header RelativePath="..\..\MyCode\Systems\DisplaySystem.h" />
+                <Header RelativePath="..\..\MyCode\LCD1.8.h" />
+                <Header RelativePath="..\..\MyCode\SPI.h" />
+                <Header RelativePath="..\..\MyCode\DMA.h" />
+                <Header RelativePath="..\..\MyCode\Font.h" />
+                <Header RelativePath="..\..\MyCode\Bmp.h" />
+            </File>
+            <File RelativePath="..\..\MyCode\Systems\DisplaySystem.c" FileType="1" Output="DisplaySystem.o" ro="0" bss="0" rw="0">
+                <Header RelativePath="..\..\MyCode\Systems\DisplaySystem.h" />
+                <Header RelativePath="..\..\MyCode\common.h" />
+                <Header RelativePath="..\..\Core\stm32f10x.h" />
+                <Header RelativePath="..\..\Core\core_cm3.h" />
+                <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h" />
+                <Header RelativePath="..\..\Core\system_stm32f10x.h" />
+                <Header RelativePath="..\..\Core\stm32f10x_conf.h" />
+                <Header RelativePath="..\..\Core\system.h" />
+                <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdlib.h" />
+                <Header RelativePath="..\..\MyCode\LCD1.8.h" />
+                <Header RelativePath="..\..\MyCode\SPI.h" />
+                <Header RelativePath="..\..\MyCode\usart.h" />
+                <Header RelativePath="..\..\MyCode\I2C.h" />
+                <Header RelativePath="..\..\MyCode\usart.h" />
+                <Header RelativePath="..\..\MyCode\SG90.h" />
+                <Header RelativePath="..\..\MyCode\SRF05.h" />
+                <Header RelativePath="..\..\MyCode\DMA.h" />
+                <Header RelativePath="..\..\MyCode\Font.h" />
+                <Header RelativePath="..\..\MyCode\Bmp.h" />
+                <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdarg.h" />
+                <Header RelativePath="..\..\MyCode\ds3231.h" />
+            </File>
+            <File RelativePath="..\..\MyCode\Patrol.c" FileType="1" Output="Patrol.o" ro="0" bss="0" rw="0">
+                <Header RelativePath="..\..\MyCode\Patrol.h" />
+                <Header RelativePath="..\..\MyCode\Common.h" />
+                <Header RelativePath="..\..\Core\stm32f10x.h" />
+                <Header RelativePath="..\..\Core\core_cm3.h" />
+                <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h" />
+                <Header RelativePath="..\..\Core\system_stm32f10x.h" />
+                <Header RelativePath="..\..\Core\stm32f10x_conf.h" />
+                <Header RelativePath="..\..\Core\system.h" />
+                <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdlib.h" />
+                <Header RelativePath="..\..\MyCode\TCR5000.h" />
+                <Header RelativePath="..\..\MyCode\L298N.h" />
+            </File>
+            <File RelativePath="..\..\MyCode\CellPhoneControl.c" FileType="1" Output="CellPhoneControl.o" ro="0" bss="0" rw="0">
+                <Header RelativePath="..\..\MyCode\CellPhoneControl.h" />
+                <Header RelativePath="..\..\MyCode\Common.h" />
+                <Header RelativePath="..\..\Core\stm32f10x.h" />
+                <Header RelativePath="..\..\Core\core_cm3.h" />
+                <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h" />
+                <Header RelativePath="..\..\Core\system_stm32f10x.h" />
+                <Header RelativePath="..\..\Core\stm32f10x_conf.h" />
+                <Header RelativePath="..\..\Core\system.h" />
+                <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdlib.h" />
+                <Header RelativePath="..\..\MyCode\usart.h" />
+                <Header RelativePath="..\..\MyCode\I2C.h" />
+                <Header RelativePath="..\..\MyCode\usart.h" />
+                <Header RelativePath="..\..\MyCode\SG90.h" />
+                <Header RelativePath="..\..\MyCode\SRF05.h" />
+            </File>
+            <File RelativePath="..\..\MyCode\Common_asm.s" FileType="2" Output="Common_asm.o" ro="0" bss="0" rw="0" />
+        </Filter>
+        <Filter Name="Main">
+            <File RelativePath="..\..\USER\main.c" FileType="1" Output="main.o" ro="0" bss="0" rw="0">
+                <Header RelativePath="..\..\MyCode\usart.h" />
+                <Header RelativePath="..\..\MyCode\Common.h" />
+                <Header RelativePath="..\..\Core\stm32f10x.h" />
+                <Header RelativePath="..\..\Core\core_cm3.h" />
+                <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h" />
+                <Header RelativePath="..\..\Core\system_stm32f10x.h" />
+                <Header RelativePath="..\..\Core\stm32f10x_conf.h" />
+                <Header RelativePath="..\..\Core\system.h" />
+                <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdlib.h" />
+                <Header RelativePath="..\..\MyCode\I2C.h" />
+                <Header RelativePath="..\..\MyCode\usart.h" />
+                <Header RelativePath="..\..\MyCode\SG90.h" />
+                <Header RelativePath="..\..\MyCode\SRF05.h" />
+                <Header RelativePath="..\..\MyCode\L298N.h" />
+                <Header RelativePath="..\..\MyCode\SPI.h" />
+                <Header RelativePath="..\..\MyCode\DMA.h" />
+                <Header RelativePath="..\..\MyCode\Systems\ObstacleAvoidingSystem.h" />
+                <Header RelativePath="..\..\MyCode\FC03.h" />
+                <Header RelativePath="..\..\MyCode\ADC.h" />
+                <Header RelativePath="..\..\MyCode\Patrol.h" />
+                <Header RelativePath="..\..\MyCode\NVIC.h" />
+                <Header RelativePath="..\..\MyCode\hmc5883.h" />
+                <Header RelativePath="..\..\MyCode\ir1838.h" />
+                <Header RelativePath="..\..\MyCode\Systems\MasterControl.h" />
+                <Header RelativePath="..\..\MyCode\Systems\PowerSystem.h" />
+                <Header RelativePath="..\..\MyCode\LCD1.8.h" />
+                <Header RelativePath="..\..\MyCode\Font.h" />
+                <Header RelativePath="..\..\MyCode\Bmp.h" />
+                <Header RelativePath="..\..\MyCode\Systems\DisplaySystem.h" />
+                <Header RelativePath="..\..\MyCode\LCD1.8.h" />
+                <Header RelativePath="..\..\MyCode\ds3231.h" />
+                <Header RelativePath="..\..\MyCode\at24c32.h" />
+                <Header RelativePath="..\..\MyCode\rtc.h" />
+                <Header RelativePath="..\..\MyCode\MPU6050.h" />
+            </File>
+        </Filter>
+        <Filter Name="Data">
+            <File RelativePath="..\..\MyCode\Font.c" FileType="1" Output="Font.o" ro="0" bss="0" rw="0">
+                <Header RelativePath="..\..\MyCode\Font.h" />
+                <Header RelativePath="..\..\MyCode\Common.h" />
+                <Header RelativePath="..\..\Core\stm32f10x.h" />
+                <Header RelativePath="..\..\Core\core_cm3.h" />
+                <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdint.h" />
+                <Header RelativePath="..\..\Core\system_stm32f10x.h" />
+                <Header RelativePath="..\..\Core\stm32f10x_conf.h" />
+                <Header RelativePath="..\..\Core\system.h" />
+                <Header RelativePath="H:\mpro\MCU\Keil_MDK\ARM\RV31\INC\stdlib.h" />
+            </File>
+        </Filter>
+    </Files>
+</TKStudioProject>

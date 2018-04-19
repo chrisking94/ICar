@@ -1,0 +1,98 @@
+C51 COMPILER V9.01   MAIN                                                                  07/09/2017 16:13:06 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\DebugRel\main.obj
+COMPILER INVOKED BY: H:\mpro\MCU\Keil\C51\BIN\C51.EXE main.c OMF2 BROWSE DEBUG TABS(2) OBJECT(.\DebugRel\main.obj)
+
+line level    source
+
+   1          #include "lcd1.8.h"
+   2          
+   3          #define DP    P0//并行数据口
+   4          #define BUFSIZE 32//最长字符串
+   5          
+   6          void Parallel_init()//并口初始化
+   7          {
+   8   1        //外部中断0
+   9   1        IT0=1;//下降沿触发
+  10   1        EX0=1;
+  11   1        EA=1;
+  12   1        //等待输入
+  13   1        DP=0xff;
+  14   1      }
+  15          
+  16          char buffer[BUFSIZE];
+  17          uchar *pBuf=buffer;
+  18          uchar bNewString=0;
+  19          
+  20          int main()
+  21          {
+  22   1        TextField tf;
+  23   1        
+  24   1        lcd18_init();
+  25   1        Parallel_init();
+  26   1        lcd18_cls();
+  27   1        
+  28   1        tf.backColor=BLACK;
+  29   1        tf.font=&SystemFont;
+  30   1        tf.foreColor=WHITE;
+  31   1        tf.x=0;
+  32   1        tf.y=0;
+  33   1        tf.width=LCD18_W;
+  34   1        tf.height=LCD18_H;
+  35   1        lcd18_initTextField(&tf);
+  36   1        lcd18_setTextField(&tf);
+  37   1        
+  38   1        for(;;)
+  39   1        {
+  40   2          if (bNewString)
+  41   2          {
+  42   3            bNewString=0;
+  43   3            lcd18_printStr(buffer);
+  44   3          }
+  45   2        }
+  46   1      }
+  47          
+  48          void EXTI0_IRQHandler(void) interrupt 0
+  49          {
+  50   1        //并口接收时钟输入
+  51   1        //下降沿触发采样
+  52   1        static  uchar mod=0;
+  53   1        
+  54   1        switch(mod)
+  55   1        {
+C51 COMPILER V9.01   MAIN                                                                  07/09/2017 16:13:06 PAGE 2   
+
+  56   2        case 0://等待接收状态，收到的第一个字节作为模式字
+  57   2          mod=DP;
+  58   2          break;
+  59   2        case 1://显示模式
+  60   2          *pBuf=DP;
+  61   2          if(*pBuf=='\0')
+  62   2          {
+  63   3            pBuf=buffer;
+  64   3            bNewString=1;
+  65   3            mod=0;
+  66   3          }else pBuf++;
+  67   2          break;
+  68   2        }
+  69   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    180    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     37      18
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+   EDATA SIZE       =   ----    ----
+   HDATA SIZE       =   ----    ----
+   XDATA CONST SIZE =   ----    ----
+   FAR CONST SIZE   =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

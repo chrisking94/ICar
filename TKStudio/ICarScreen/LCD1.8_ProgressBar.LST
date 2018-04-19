@@ -1,0 +1,52 @@
+C51 COMPILER V9.01   LCD1_8_PROGRESSBAR                                                    07/06/2017 17:50:20 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE LCD1_8_PROGRESSBAR
+OBJECT MODULE PLACED IN LCD1.8_ProgressBar.OBJ
+COMPILER INVOKED BY: H:\mpro\MCU\Keil\C51\BIN\C51.EXE LCD1.8_ProgressBar.c OMF2 BROWSE DEBUG TABS(2)
+
+line level    source
+
+   1          #include "lcd1.8.h"
+   2          
+   3          #ifdef COMPILE_LCD18_
+   4          
+   5          /*进度条*/
+   6          
+   7          ProgressBar* p_pb;
+*** ERROR C129 IN LINE 7 OF LCD1.8_PROGRESSBAR.C: missing ';' before '*'
+   8          
+   9          void lcd18_initProgressBar(ProgressBar* pPB)
+  10          {
+  11            lcd18_beginFill(pPB->backColor,true);
+  12            lcd18_drawRect(pPB->x,pPB->y,pPB->width,pPB->height);
+  13            lcd18_endFill();
+  14          }
+  15          
+  16          void lcd18_setProgressBar(ProgressBar* pProgressBar)
+  17          {
+  18            p_pb=pProgressBar;
+  19          }
+  20          
+  21          void lcd18_setPBVal(u8 val)
+  22          {
+  23            val=val*p_pb->width/100;
+  24            if(val<p_pb->value)//清除以前画的
+  25            {
+  26              lcd18_beginFill(p_pb->backColor,true);
+  27              lcd18_drawRect(p_pb->x+val,p_pb->y,p_pb->value-val,p_pb->height);
+  28            }
+  29            else
+  30            {
+  31              lcd18_beginFill(p_pb->foreColor,true);
+  32              lcd18_drawRect(p_pb->x+p_pb->value,p_pb->y,val-p_pb->value,p_pb->height);
+  33            }
+  34            
+  35            p_pb->value=val;
+  36            
+  37            lcd18_endFill();
+  38          }
+  39          
+  40          #endif
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  1 ERROR(S)

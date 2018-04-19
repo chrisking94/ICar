@@ -1,0 +1,160 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;¹«ÓÃº¯Êý¿â
+    2 00000000         
+    3 00000000         ;½Ó¿ÚÉùÃ÷
+    4 00000000                 EXPORT           Bcd2Dec
+    5 00000000                 EXPORT           Dec2Bcd
+    6 00000000                 EXPORT           Div_U32
+    7 00000000         
+    8 00000000         
+    9 00000000         ;Êý¾ÝÇø
+   10 00000000                 AREA             COMMON_DATE,DATA,READWRITE
+   11 00000000         
+   12 00000000         ;´úÂëÇø
+   13 00000000                 AREA             COMMON_CODE,CODE,READONLY
+   14 00000000         
+   15 00000000         Bcd2Dec                              ;BCDÂë×ªÊ®½øÖÆ£¬²ÎÊ
+                                                            ý1£ºÊ®½øÖÆÊý
+   16 00000000 B506            STMFD            SP!,{R1-R2,LR}
+   17 00000002 F000 010F       AND              R1,R0,#0xF  ;µÍ4Î»
+   18 00000006 EA4F 1010       LSR              R0,#4
+   19 0000000A F04F 020A       LDR              R2,=10
+   20 0000000E FB00 F002       MUL              R0,R0,R2
+   21 00000012 4408            ADD              R0,R0,R1
+   22 00000014 BD06            LDMFD            SP!,{R1-R2,PC}
+   23 00000016         
+   24 00000016         
+   25 00000016         Dec2Bcd                              ;Ê®½øÖÆ×ªBCDÂë£¬²ÎÊ
+                                                            ý1£ºBCDÂë
+   26 00000016 B506            STMFD            SP!,{R1-R2,LR}
+   27 00000018 F04F 010A       LDR              R1,=10
+   28 0000001C F7FF FFFE       BL               Div_U32
+   29 00000020 EA4F 1000       LSL              R0,#4
+   30 00000024 EA40 0002       ORR              R0,R2
+   31 00000028 BD06            LDMFD            SP!,{R1-R2,PC}
+   32 0000002A         
+   33 0000002A         
+   34 0000002A         ;Div_U32£¬32Î»ÎÞ·ûºÅÕûÊý³ý·¨£¬²ÎÊý1£º±»³ýÊý£¬²ÎÊý2£º³ýÊý
+                       £¬ÉÌ´æÈëR0£¬ÓàÊý´æÈëR2
+   35 0000002A         Div_U32
+   36 0000002A B518            STMFD            SP!,{R3-R4,LR} ;ÈëÕ»
+   37 0000002C F04F 0300       LDR              R3,=0       ;r3ÇåÁã£¬±»³ýÊý×óÒÆ
+                                                            µÄ¸ßÎ»´æ´¢Æ÷
+   38 00000030 F04F 0420       LDR              R4,=32      ;¼õ32´Î
+   39 00000034         SUB_AGAIN
+   40 00000034 EA4F 0343       LSL              R3,#1       ;R3×óÒÆ£¬Áô³öÒ»¸ö¿Õ
+                                                            Î»
+   41 00000038 F010 4F00       TST              R0,#0X80000000 ;¸ßÎ»¼ì²â
+   42 0000003C D001            BEQ              HBIT_EQU0   ;¸ßÎ»Îª0£¬Ö±½ÓÌø¹ý
+   43 0000003E F043 0301       ORR              R3,#1       ;¸ßÎ»Îª1£¬´æÈëR3
+   44 00000042         HBIT_EQU0
+   45 00000042 EA4F 0040       LSL              R0,#1
+   46 00000046 1A5A            SUBS             R2,R3,R1
+   47 00000048 D302            BCC              SUB_END     ;²»¹»¼õÌø¹ý
+   48 0000004A F040 0001       ORR              R0,#1       ;ÉÌ1
+   49 0000004E 4613            MOV              R3,R2       ;¹»¼õ´æÈë²î
+   50 00000050         SUB_END
+   51 00000050 1E64            SUBS             R4,R4,#1    ;¼ÆÊý¼õ1£¬²¢ÉèÖÃcps
+                                                            rÏà¹ØÎ»£¨sÊÇ±ØÐëµÄ£
+                                                            ©
+   52 00000052 D1EF            BNE              SUB_AGAIN
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+   53 00000054         
+   54 00000054 461A            MOV              R2,R3       ;ÓàÊýÐ´Èër2
+   55 00000056 BD18            LDMFD            SP!,{R3-R4,PC} ;³öÕ»
+   56 00000058         ;Div_U32£¬end
+                       
+Command Line: --debug --dwarf2 --xref --cpu=Cortex-M3 --apcs=interwork -o.\Debu
+gRel\Common_asm.o -IH:\mpro\MCU\Keil_MDK\ARM\CMSIS\Include -IH:\mpro\MCU\Keil_M
+DK\ARM\INC\ST\STM32F10x --list=.\DebugRel\Common_asm.lst ..\..\MyCode\Common_as
+m.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+COMMON_DATE 00000000
+
+Symbol: COMMON_DATE
+   Definitions
+      At line 10 in file ..\..\MyCode\Common_asm.s
+   Uses
+      None
+Comment: COMMON_DATE unused
+1 symbol
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Bcd2Dec 00000000
+
+Symbol: Bcd2Dec
+   Definitions
+      At line 15 in file ..\..\MyCode\Common_asm.s
+   Uses
+      At line 4 in file ..\..\MyCode\Common_asm.s
+Comment: Bcd2Dec used once
+COMMON_CODE 00000000
+
+Symbol: COMMON_CODE
+   Definitions
+      At line 13 in file ..\..\MyCode\Common_asm.s
+   Uses
+      None
+Comment: COMMON_CODE unused
+Dec2Bcd 00000016
+
+Symbol: Dec2Bcd
+   Definitions
+      At line 25 in file ..\..\MyCode\Common_asm.s
+   Uses
+      At line 5 in file ..\..\MyCode\Common_asm.s
+Comment: Dec2Bcd used once
+Div_U32 0000002A
+
+Symbol: Div_U32
+   Definitions
+      At line 35 in file ..\..\MyCode\Common_asm.s
+   Uses
+      At line 6 in file ..\..\MyCode\Common_asm.s
+      At line 28 in file ..\..\MyCode\Common_asm.s
+
+HBIT_EQU0 00000042
+
+Symbol: HBIT_EQU0
+   Definitions
+      At line 44 in file ..\..\MyCode\Common_asm.s
+   Uses
+      At line 42 in file ..\..\MyCode\Common_asm.s
+Comment: HBIT_EQU0 used once
+SUB_AGAIN 00000034
+
+Symbol: SUB_AGAIN
+   Definitions
+      At line 39 in file ..\..\MyCode\Common_asm.s
+   Uses
+      At line 52 in file ..\..\MyCode\Common_asm.s
+Comment: SUB_AGAIN used once
+SUB_END 00000050
+
+Symbol: SUB_END
+   Definitions
+      At line 50 in file ..\..\MyCode\Common_asm.s
+   Uses
+      At line 47 in file ..\..\MyCode\Common_asm.s
+Comment: SUB_END used once
+7 symbols
+332 symbols in table
